@@ -1,0 +1,36 @@
+@import '_variables'; 
+
+@mixin clearButton(){
+    border:2px solid $color_dark_blue;
+    border-radius:4px;
+    cursor:pointer;
+    color:$color_dark_blue;
+    padding:.5rem 1rem;
+    background-color: white;
+    font:$section_button_font;
+}
+
+@mixin solidButton(){
+    border:2px solid $color_dark_blue;
+    border-radius:4px;
+    cursor:pointer;
+    color:white;
+    padding:.5rem 1rem;
+    background-color: $color_dark_blue;
+    font:$section_button_font;
+    // border: none;
+}
+
+@mixin disabledButton(){
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+}
+
+@mixin buttonPressed(){
+    transition: all 0.1s;
+    &:active{
+        transform:scale(0.95);
+    }
+}

@@ -1,0 +1,245 @@
+@import '../../../styles/common.scss';
+
+* {
+  box-sizing: border-box;
+  // font: normal normal normal 18px/34px Bw Modelica SS02;
+  margin: 0;
+  padding: 0;
+
+}
+h4{
+  font:$footer_link_text_font;
+  color: #FFFFFF;
+opacity: 0.5;
+}
+ul {
+  list-style: none;
+  padding:0px;
+  margin:0px;
+  // font:$footer_link_text_font;
+  // color: #bbb;
+
+}
+.list-text{
+  font:$footer_link_text_font;
+  color: #ffffff;
+  opacity: 0.85;
+}
+footer {
+  background: transparent linear-gradient(180deg, var(--unnamed-color-0670ba) 0%, var(--main-color) 100%) 0% 0% no-repeat ;
+  background: transparent linear-gradient(180deg,  #2A2E7D 100%, #0670BA 80% ) 0% 0% no-repeat ;
+  opacity: 1;
+  color: #bbb;
+  line-height: 1.5;
+
+
+  a {
+    text-decoration: none;
+    color: #eee;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+
+
+
+.ft-title-main
+{
+  color: #fff;
+  font: normal normal bold 20px/36px Bw Modelica;
+  // font-size: 2.5rem;
+  padding-bottom: 0.25rem;
+}
+
+.body-main1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.ft-main {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.ft-main-item {
+  padding: 2.0rem 2.25rem;
+  min-width: 12.5rem /*200px*/;
+  flex-wrap: wrap;
+
+  .ft-title {
+    color: #fff;
+    font: $header_footer_nav_text_font;
+    // font-size: 1.375rem;
+    padding-top: 25px;
+    // padding-bottom: 0.25rem;
+  }
+
+}
+.ft-main-top-item{
+  padding-top: 3.25rem;
+  padding-left:  2.25rem;
+  padding-right:  2.25rem;
+  min-width: 12.5rem /*200px*/;
+  flex-wrap: wrap;
+}
+
+
+.ft-social-list {
+  display: flex;
+  justify-content: left;
+  padding-top: 0.025rem;
+  margin-left: -0.55rem;
+}
+.ft-social-list li {
+  // margin: 0.25rem;
+  padding-right: 0.45rem;
+  font-size: 1.25rem;
+
+ // margin-left: -0.25rem;
+}
+
+.fastlane-logo {
+  // max-width: 100%;
+  width: 232px;
+  height: 30px;
+  padding-top: 1px;
+  padding-left: 4px;
+}
+
+.img-icon-youtube {
+  // max-width: 100%;
+  width: 22px;
+  height: 30px;
+  padding-left: 0.15rem;
+ // margin-left: 7px;
+  // padding-top: 1px;
+  // margin-right: 10px;
+
+}
+
+
+.img-icon {
+  // max-width: 100%;
+  width: 24px;
+  height: 18px;
+  // padding-top: 1px;
+  margin-right: 10px;
+
+}
+.text-title {
+  flex-basis: 10%;
+  color: #fff;
+  font: normal normal bold 20px/36px Bw Modelica;
+  font-size: 5.375rem;
+
+}
+
+.LTI-LOGO
+{
+  width: 53px;
+ height: 30px;
+ padding-right: 4px;
+}
+
+@media only screen and (min-width: 400px /*360px*/) {
+  .ft-main {
+     justify-content: space-between;
+    }
+    .ft-subitems{
+      display:flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-grow: 1;
+      height: auto;
+    }
+
+    .ft-main-item{
+      // padding: 0.25rem 2.25rem;
+      padding-left: 2.25rem;
+     // padding-right: 0.25rem;
+      padding-top: 0rem;
+      padding-bottom: 2rem;
+    }
+
+    .ft-main-top-item{
+
+      padding-left: 2.25rem;
+      min-width: 13.0rem /*200px*/;
+      flex-wrap: wrap;
+    }
+
+
+
+}
+
+@media only screen and (max-width: 399px /*360px*/) {
+  .ft-main {
+     justify-content: space-between;
+    }
+    // .ft-subitems{
+    //   display:flex;
+    //   flex-direction: row;
+    //   justify-content: space-between;
+		//   // flex-wrap: wrap;
+    //   // flex-grow: 1;
+    //   // flex-shrink: 2;
+		//   // align-items: center;
+		//   // box-sizing: border-box;
+		//   height: auto;
+    // }
+
+    .ft-main-item{
+      // padding: 0.25rem 2.25rem;
+      justify-content: center;
+      padding-left: 3rem;
+      padding-right: 2rem;
+      padding-top: 0rem;
+    }
+
+    .ft-main-top-item{
+      padding-top: 2.85rem;
+      padding-left:  2.25rem;
+
+      // min-width: 12.5rem /*200px*/;
+      flex-wrap: wrap;
+    }
+
+    .fastlane-logo {
+      // max-width: 100%;
+      width: 180px;
+      height: 30px;
+      padding-top: 1px;
+      padding-left: 4px;
+    }
+
+    .LTI-LOGO
+{
+  width: 43px;
+ height: 30px;
+ padding-right: 4px;
+}
+
+}
+@media only screen and (min-width: 30.5rem /*1240px*/ ) {
+  .ft-main {
+      justify-content: space-between;
+  }
+  .right-comp{
+      display:flex;
+      flex-direction: row;
+  }
+
+  .ft-subitems{
+      display:flex;
+      flex-direction: row;
+    }
+
+}
+
+

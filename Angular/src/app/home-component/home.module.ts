@@ -4,6 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { HomeComponentComponent } from './home-component.component';
 import { HomeIntroComponentComponent } from './home-intro-component/home-intro-component.component';
+import { HeaderComponentComponent } from './header-component/header-component.component';
+import { FooterComponentComponent } from './footer-component/footer-component.component';
+import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
 
 //import {ClientFeedbackComponent} from './components/client-feedback/client-feedback.component'
 const routes: Routes = [
@@ -21,7 +24,10 @@ const routes: Routes = [
 @NgModule({
     declarations: [
         HomeComponentComponent,
-        HomeIntroComponentComponent
+        HomeIntroComponentComponent,
+        HeaderComponentComponent,
+        FooterComponentComponent,
+        ScrollToTopComponent
         // SlantSectionComponent,
 
         // ClientFeedbackComponent,
