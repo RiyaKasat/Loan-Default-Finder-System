@@ -1,14 +1,9 @@
-<owl-carousel-o [options]="customOptions">
-    <ng-template carouselSlide>Slide 1</ng-template>
-    <ng-template carouselSlide>Slide 2</ng-template>
-    <ng-template carouselSlide>Slide 3</ng-template>
-</owl-carousel-o>
-<div>Some tags after</div>
+
 <section class="banner">
 
 
 
-    <div>Some tags after</div>
+  
     <owl-carousel-o [options]="customOptions">
         <ng-container *ngFor="let item of imageObject">
             <ng-template carouselSlide [id]="item.id">

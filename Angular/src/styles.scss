@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+
+.owl-dots{
+    top:-60px;
+    position: relative;
+    background: transparent linear-gradient( rgba(46,46,46,.85),rgba(46,46,46,.85));
+    border-radius: 27px;
+    // opacity: 0.65;
+    //background:  url('../../../assets/images/About Assessment/CarouselRec.svg');
+   // background-image: './assets/images/About Assessment/CarouselRec.svg';
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    justify-content: center;
+}
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background: #ffffff;
+    opacity: 1;
+    
+}
+.owl-theme .owl-dots .owl-dot span {
+    background: none;
+    border: 2px solid #ffffff;
+    opacity: 1;
+}

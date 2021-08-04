@@ -7,6 +7,7 @@ import { HomeIntroComponentComponent } from './home-intro-component/home-intro-c
 import { HeaderComponentComponent } from './header-component/header-component.component';
 import { FooterComponentComponent } from './footer-component/footer-component.component';
 import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
+import { CardComponent } from './card/card.component';
 
 //import {ClientFeedbackComponent} from './components/client-feedback/client-feedback.component'
 const routes: Routes = [
@@ -27,7 +28,8 @@ const routes: Routes = [
         HomeIntroComponentComponent,
         HeaderComponentComponent,
         FooterComponentComponent,
-        ScrollToTopComponent
+        ScrollToTopComponent,
+        CardComponent
         // SlantSectionComponent,
 
         // ClientFeedbackComponent,
@@ -39,6 +41,6 @@ const routes: Routes = [
         RouterModule.forChild(routes),
 
     ],
-    exports: [HomeComponentComponent, RouterModule],
+    exports: [HomeComponentComponent, RouterModule, CardComponent],
 })
 export class HomeModule { }

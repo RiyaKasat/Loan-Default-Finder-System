@@ -15,6 +15,11 @@ import { BreadcrumbComponent } from './shared/breadcrumb/breadcrumb.component';
 import { HeaderComponentComponent } from './home-component/header-component/header-component.component';
 import { FooterComponentComponent } from './home-component/footer-component/footer-component.component';
 import { ScrollToTopComponent } from './home-component/scroll-to-top/scroll-to-top.component';
+import { RouterModule } from '@angular/router';
+import { CardComponent } from './home-component/card/card.component';
+import { TestComponent } from './Forms/test/test.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,13 +29,21 @@ import { ScrollToTopComponent } from './home-component/scroll-to-top/scroll-to-t
     BreadcrumbComponent,
     HeaderComponentComponent,
     FooterComponentComponent,
-    ScrollToTopComponent
+    ScrollToTopComponent,
+    CardComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CarouselModule,
     BrowserAnimationsModule,
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule ,
+    
+    
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable
@@ -38,7 +51,7 @@ import { ScrollToTopComponent } from './home-component/scroll-to-top/scroll-to-t
       registrationStrategy: 'registerWhenStable:30000'
     })
   ],
-  providers: [],
+  providers: [HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

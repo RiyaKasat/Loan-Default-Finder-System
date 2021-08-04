@@ -1,4 +1,4 @@
-@import '../../styles/variables.scss';
+@import '../../../styles/variables.scss';
 .container-main {
 
 	// background: url("../../../../assets/home/home-intro-desktop.png");
@@ -90,7 +90,7 @@ button {
   // font: normal normal bold 0.875em/1em Bw Modelica;
   padding: 12.6px 25.2px;
 	letter-spacing: 0px;
-	color: #2A2E7D;
+	color: #1d2279;
 	background: #FFFFFF 0% 0% no-repeat padding-box;
 	border-radius: 4px;
 	// width: 160px;
@@ -106,10 +106,10 @@ button {
 
 }
 
-// @media (min-width:500px) {
-// 	.intro-mobile {
-// 		display: none;
-// 	}
+@media (min-width:500px) {
+	.intro-mobile {
+		display: none;
+	}
 
 
 // }
@@ -125,91 +125,94 @@ button {
 // 		height:60%;
 // // 	}
 // // }
-// @media (max-width:500px) {
-// 	.container-main{
-// 		// background: url("../../../../assets/home/home-intro-mob.png");
-// 		height: 590px;
-// 	}
-// 	.slide {
-// 		span {
-// 			// font: normal normal 300 20px/88px Bw Modelica LTI;
-// 			font: $section_header_text_font;
-// 		}
-// 		.slide-content{
-// 			padding-top: 5px;
-// 		}
-// 		.resp {
-// 			padding-left: 2px;
-// 			// font-family: Gotham;
-// 	        // font-weight: Ultra Italic;
-// 			font: $fastlane_logo_font;
-// 	        font-size: 24px;
-// 	        line-height: 88px;
-// 			// font-size:max(2.0vw,1.4rem);
-// 		}
-// 		.resp-text{
-// 			font-size: 24px;
-// 		}
-// 		// width: 90%;
-// 		// height: 43%;
-// 		width:340px;
-// 		height: 44%; //40
-// 		background: linear-gradient(rgba(42, 46, 125,.88), rgba(42,46,125,.88)) 0% 0% no-repeat padding-box;
-// 	}
-// 	.intro-desktop {
-// 		display: none;
-// 	}
-// 	.intro-mobile {
-// 		// font: normal normal normal 13px/20px Bw Modelica;
-// 		font: $section_content_text_font;
-// 		font-size: 13px;
-// 		line-height: 20px;
-// 		padding-top: 0px;
-// 		// font-size:max(0.2vw,0.8rem)
 
-// 	}
-// 	button {
-// 		width: 180px;
-//         font: $section_button_font;
-//         margin-bottom: 15px;
-// 	}
-// }
-// @media (max-width:350px){
 
-// 	.slide{
-// 		span{
-// 			font-size: 18px;
-// 		}
-// 		.resp{
-// 			font-size: 22px;
-// 		}
-// 		.resp-text{
-// 			font-size: 22px;
-// 		}
-// 		width: 310px;
-// 		height: 43%;
+@media (max-width:500px) {
+	.container-main{
+		// background: url("../../../../assets/home/home-intro-mob.png");
+		height: 590px;
+	}
+	.slide {
+		span {
+			// font: normal normal 300 20px/88px Bw Modelica LTI;
+			font: $section_header_text_font;
+		}
+		.slide-content{
+			padding-top: 5px;
+		}
+		.resp {
+			padding-left: 2px;
+			// font-family: Gotham;
+	        // font-weight: Ultra Italic;
+			font: $fastlane_logo_font;
+	        font-size: 24px;
+	        line-height: 88px;
+			// font-size:max(2.0vw,1.4rem);
+		}
+		.resp-text{
+			font-size: 24px;
+		}
+		// width: 90%;
+		// height: 43%;
+		width:340px;
+		height: 44%; //40
+		background: linear-gradient(rgba(42, 46, 125,.88), rgba(42,46,125,.88)) 0% 0% no-repeat padding-box;
+	}
+	.intro-desktop {
+		display: none;
+	}
+	.intro-mobile {
+		// font: normal normal normal 13px/20px Bw Modelica;
+		font: $section_content_text_font;
+		font-size: 13px;
+		line-height: 20px;
+		padding-top: 0px;
+		// font-size:max(0.2vw,0.8rem)
 
-// 	}
-// }
-// @media (max-width:300px){
+	}
+	button {
+		width: 180px;
+        font: $section_button_font;
+        margin-bottom: 15px;
+	}
+}
+@media (max-width:350px){
 
-// 	.slide{
-// 		span{
-// 			font-size: 11px;
-// 		}
-// 		.resp{
-// 			font-size: 18px;
-// 		}
-// 		.resp-text{
-// 			font-size:18px ;
-// 		}
-// 		width: 270px;
-// 		height: 43%;
+	.slide{
+		span{
+			font-size: 18px;
+		}
+		.resp{
+			font-size: 22px;
+		}
+		.resp-text{
+			font-size: 22px;
+		}
+		width: 310px;
+		height: 43%;
 
-// 	}
-// }
+	}
+}
+@media (max-width:300px){
+
+	.slide{
+		span{
+			font-size: 11px;
+		}
+		.resp{
+			font-size: 18px;
+		}
+		.resp-text{
+			font-size:18px ;
+		}
+		width: 270px;
+		height: 43%;
+
+	}
+}
 
 
 ::ng-deep .owl-theme .owl-dots .owl-dot {
   margin-top: 5px;
+}
 }
