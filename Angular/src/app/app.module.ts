@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,6 +20,10 @@ import { CardComponent } from './home-component/card/card.component';
 import { TestComponent } from './Forms/test/test.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { LoanComponentComponent } from './loan-component/loan-component.component';
+import { LoanTypeComponent } from './loan-component/loan-type/loan-type.component';
+
+
 
 @NgModule({
   declarations: [
@@ -31,7 +35,10 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     FooterComponentComponent,
     ScrollToTopComponent,
     CardComponent,
-    TestComponent
+    TestComponent,
+    LoanTypeComponent,
+    LoanComponentComponent
+
   ],
   imports: [
     BrowserModule,
@@ -51,6 +58,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
       registrationStrategy: 'registerWhenStable:30000'
     })
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [HttpClient],
   bootstrap: [AppComponent]
 })

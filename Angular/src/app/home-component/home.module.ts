@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
@@ -8,6 +8,7 @@ import { HeaderComponentComponent } from './header-component/header-component.co
 import { FooterComponentComponent } from './footer-component/footer-component.component';
 import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
 import { CardComponent } from './card/card.component';
+
 
 //import {ClientFeedbackComponent} from './components/client-feedback/client-feedback.component'
 const routes: Routes = [
@@ -41,6 +42,7 @@ const routes: Routes = [
         RouterModule.forChild(routes),
 
     ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
     exports: [HomeComponentComponent, RouterModule, CardComponent],
 })
 export class HomeModule { }
