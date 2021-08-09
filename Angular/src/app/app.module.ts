@@ -2,7 +2,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+//import {Approutes} from './app-routing.module';
 
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,7 +17,7 @@ import { FooterComponentComponent } from './home-component/footer-component/foot
 import { ScrollToTopComponent } from './home-component/scroll-to-top/scroll-to-top.component';
 import { RouterModule } from '@angular/router';
 import { CardComponent } from './home-component/card/card.component';
-import { TestComponent } from './Forms/test/test.component';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LoanComponentComponent } from './loan-component/loan-component.component';
@@ -26,9 +26,24 @@ import { DiscoverComponent } from './home-component/discover/discover.component'
 import { KnowYourSectionComponent } from './home-component/know-your-section/know-your-section.component';
 import { HowItworksComponent } from './home-component/how-itworks/how-itworks.component';
 import { ClientFeedbackComponent } from './home-component/client-feedback/client-feedback.component';
+import { CalculatorLoanComponent } from './calculator-loan/calculator-loan.component';
 
 
+import { NumericTextBoxModule, SliderModule } from '@syncfusion/ej2-angular-inputs';
+import { RadioButtonModule } from '@syncfusion/ej2-angular-buttons';
 
+import { AccumulationChartModule, ChartModule } from '@syncfusion/ej2-angular-charts';
+import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
+import { GridModule } from '@syncfusion/ej2-angular-grids';
+
+import { HomeComponent } from './calculator-loan/home/home.component';
+import { InputComponent } from './calculator-loan/home/input/input.component';
+import { DashboardComponent } from './calculator-loan/home/dashboard/dashboard.component';
+import { StatementComponent } from './calculator-loan/statement/statement.component';
+import { BarChartComponent } from './calculator-loan/bar-chart/bar-chart.component';
+import { GridAppComponent } from './calculator-loan/grid-app/grid-app.component';
+
+import { DataService } from './calculator-loan/data-service'
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,13 +54,24 @@ import { ClientFeedbackComponent } from './home-component/client-feedback/client
     FooterComponentComponent,
     ScrollToTopComponent,
     CardComponent,
-    TestComponent,
+   
+ 
     LoanTypeComponent,
     LoanComponentComponent,
     DiscoverComponent,
     KnowYourSectionComponent,
     HowItworksComponent,
-    ClientFeedbackComponent
+    ClientFeedbackComponent,
+    CalculatorLoanComponent,
+  
+
+    HomeComponent,
+    InputComponent,
+    DashboardComponent,
+    StatementComponent,
+    BarChartComponent,
+    GridAppComponent,
+    routingComponents,
 
   ],
   imports: [
@@ -57,7 +83,16 @@ import { ClientFeedbackComponent } from './home-component/client-feedback/client
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule ,
-    
+   
+    BrowserModule,
+    NumericTextBoxModule,
+    SliderModule,
+    RadioButtonModule,
+    AccumulationChartModule,
+    DatePickerModule,
+    ChartModule,
+    GridModule,
+   
     
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
@@ -67,7 +102,7 @@ import { ClientFeedbackComponent } from './home-component/client-feedback/client
     })
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [HttpClient],
+  providers: [HttpClient, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
