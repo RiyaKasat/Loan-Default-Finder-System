@@ -22,6 +22,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LoanComponentComponent } from './loan-component/loan-component.component';
 import { LoanTypeComponent } from './loan-component/loan-type/loan-type.component';
+import { DiscoverComponent } from './home-component/discover/discover.component';
+import { KnowYourSectionComponent } from './home-component/know-your-section/know-your-section.component';
+import { HowItworksComponent } from './home-component/how-itworks/how-itworks.component';
+import { ClientFeedbackComponent } from './home-component/client-feedback/client-feedback.component';
 
 
 
@@ -37,7 +41,11 @@ import { LoanTypeComponent } from './loan-component/loan-type/loan-type.componen
     CardComponent,
     TestComponent,
     LoanTypeComponent,
-    LoanComponentComponent
+    LoanComponentComponent,
+    DiscoverComponent,
+    KnowYourSectionComponent,
+    HowItworksComponent,
+    ClientFeedbackComponent
 
   ],
   imports: [

@@ -9,6 +9,11 @@ import { FooterComponentComponent } from './footer-component/footer-component.co
 import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
 import { CardComponent } from './card/card.component';
 
+import { DiscoverComponent } from './discover/discover.component';
+import { KnowYourSectionComponent } from './know-your-section/know-your-section.component';
+import { HowItworksComponent } from './how-itworks/how-itworks.component';
+import { ClientFeedbackComponent } from './client-feedback/client-feedback.component';
+
 
 //import {ClientFeedbackComponent} from './components/client-feedback/client-feedback.component'
 const routes: Routes = [
@@ -30,7 +35,12 @@ const routes: Routes = [
         HeaderComponentComponent,
         FooterComponentComponent,
         ScrollToTopComponent,
-        CardComponent
+        CardComponent,
+        
+        DiscoverComponent,
+                  KnowYourSectionComponent,
+                  HowItworksComponent,
+                  ClientFeedbackComponent
         // SlantSectionComponent,
 
         // ClientFeedbackComponent,
@@ -43,6 +53,6 @@ const routes: Routes = [
 
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    exports: [HomeComponentComponent, RouterModule, CardComponent],
+    exports: [HomeComponentComponent, RouterModule, CardComponent, DiscoverComponent],
 })
 export class HomeModule { }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
@@ -32,7 +33,7 @@ export class HomeIntroComponentComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(private router: Router) { }
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: false,
@@ -68,6 +69,11 @@ export class HomeIntroComponentComponent implements OnInit {
   // }
 
   ngOnInit(): void {
+  }
+
+
+  navigateToAssessment() {
+    this.router.navigate(['about-assessment']);
   }
 
 }
