@@ -43,7 +43,8 @@ import { StatementComponent } from './calculator-loan/statement/statement.compon
 import { BarChartComponent } from './calculator-loan/bar-chart/bar-chart.component';
 import { GridAppComponent } from './calculator-loan/grid-app/grid-app.component';
 
-import { DataService } from './calculator-loan/data-service'
+import { DataService } from './calculator-loan/data-service';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -72,6 +73,7 @@ import { DataService } from './calculator-loan/data-service'
     BarChartComponent,
     GridAppComponent,
     routingComponents,
+    UserDashboardComponent,
 
   ],
   imports: [
