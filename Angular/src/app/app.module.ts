@@ -45,6 +45,14 @@ import { GridAppComponent } from './calculator-loan/grid-app/grid-app.component'
 
 import { DataService } from './calculator-loan/data-service';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component'
+import { MatButtonModule } from '@angular/material/button';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatInputModule } from '@angular/material/input';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { CommonModule } from '@angular/common';
+import { SidebarComponent } from './user-dashboard/sidebar/sidebar.component';
+import { UserDashboardModule } from './user-dashboard/user-dashboard.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,7 +81,14 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
     BarChartComponent,
     GridAppComponent,
     routingComponents,
-    UserDashboardComponent,
+    
+  
+    
+   
+
+
+   
+    
 
   ],
   imports: [
@@ -94,7 +109,21 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
     DatePickerModule,
     ChartModule,
     GridModule,
+
+
+    BrowserModule,
+    FormsModule,
+ 
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatRadioModule,
+    MatInputModule,
+    MatMenuModule,
+    MatCheckboxModule,
+    CommonModule,
    
+
+    UserDashboardModule,
     
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
