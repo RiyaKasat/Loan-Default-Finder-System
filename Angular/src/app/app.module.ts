@@ -53,6 +53,15 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { CommonModule } from '@angular/common';
 import { SidebarComponent } from './user-dashboard/sidebar/sidebar.component';
 import { UserDashboardModule } from './user-dashboard/user-dashboard.module';
+
+import { MatDialogModule } from '@angular/material/dialog';
+
+import { FormModule } from './Forms/form.module';
+
+import { NgbProgressbarModule } from '@ng-bootstrap/ng-bootstrap';
+import { FileUploadComponent } from './file-upload/file-upload.component';
+import { FileUploadModule } from './file-upload/file-upload.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -80,7 +89,7 @@ import { UserDashboardModule } from './user-dashboard/user-dashboard.module';
     StatementComponent,
     BarChartComponent,
     GridAppComponent,
-    routingComponents,
+    routingComponents
     
   
     
@@ -121,10 +130,16 @@ import { UserDashboardModule } from './user-dashboard/user-dashboard.module';
     MatMenuModule,
     MatCheckboxModule,
     CommonModule,
+
+    MatDialogModule,
    
 
     UserDashboardModule,
+    FormModule,
+    FileUploadModule ,
     
+
+    NgbProgressbarModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable

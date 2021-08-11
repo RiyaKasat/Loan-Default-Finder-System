@@ -17,6 +17,7 @@ import { TableComponent } from './user-dashboard/dashboard/table/table.component
 import { LockComponent } from './user-dashboard/page/lock/lock.component';
 import { LoginComponent } from './user-dashboard/page/login/login.component';
 import { RegisterComponent } from './user-dashboard/page/register/register.component';
+import { FormsComponent } from './Forms/forms/forms.component';
 
 
 const Approutes: Routes = [
@@ -52,7 +53,9 @@ const Approutes: Routes = [
     {path: 'components/price-table', component: PriceTableComponent},
     {path: 'components/panels', component: PanelsComponent},
     {path: 'components/wizard', component: WizardComponent}
-  ]}
+  ]},
+
+  { path: 'applicationform', component: FormsComponent }
 ];
 
 // export default Approutes;
