@@ -8,10 +8,14 @@ const cors = require("cors");
 const nodemailer=require('nodemailer');
 const SMTPTransport = require('nodemailer/lib/smtp-transport');
 
+const db = require("./models");
+
 
 const bodyParser=require('body-parser');
  
 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json())
 
 
 //db connection
@@ -23,6 +27,8 @@ var connection = mysql.createConnection({
     port:"3306"
 })
 
+
+
 connection.connect((err) =>
 {
     if(err){
@@ -32,6 +38,11 @@ connection.connect((err) =>
         console.log("connected")
     }
 })
+
+// connection.query(`select * from loansystem.persons`, function (err, result, fields) {
+//   if (err) throw err;
+//   console.log(result);
+// });
 
 dotenv.config();
 
@@ -63,7 +74,38 @@ var corsOptions = {
 //   }
 
 app.use(cors(corsOptions));
+
+
+//SignUpLogin
+const Role = db.role;
+
+db.sequelize.sync({force: true}).then(() => {
+  console.log('Drop and Resync Db');
+  initial();
+});
+
+function initial() {
+  Role.create({
+    id: 1,
+    name: "user"
+  });
+ 
+  Role.create({
+    id: 2,
+    name: "moderator"
+  });
+ 
+  Role.create({
+    id: 3,
+    name: "admin"
+  });
+}
   
+
+require('./routes/auth.routes')(app);
+require('./routes/user.routes')(app);
+
+
 // Enable preflight requests for all routes
 // app.options('*', cors(corsOptions));
 
@@ -85,7 +127,12 @@ initRoutes(app);
 //   });
 
 
-app.use(bodyParser.json());
+
+
+// simple route
+app.get("/", (req, res) => {
+  res.json({ message: "Welcome to bezkoder application." });
+});
 
 //start application server on port 3000
 // app.listen(3000, () => {

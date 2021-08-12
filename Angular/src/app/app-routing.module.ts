@@ -18,6 +18,13 @@ import { LockComponent } from './user-dashboard/page/lock/lock.component';
 import { LoginComponent } from './user-dashboard/page/login/login.component';
 import { RegisterComponent } from './user-dashboard/page/register/register.component';
 import { FormsComponent } from './Forms/forms/forms.component';
+import { BoardAdminComponent } from './SignUpLogin/board-admin/board-admin.component';
+import { BoardModeratorComponent } from './SignUpLogin/board-moderator/board-moderator.component';
+import { BoardUserComponent } from './SignUpLogin/board-user/board-user.component';
+import { LoginHomeComponent } from './SignUpLogin/home/home.component';
+import { SignUpLoginComponent } from './SignUpLogin/login/login.component';
+import { LoginProfileComponent } from './SignUpLogin/profile/profile.component';
+import { LoginRegisterComponent } from './SignUpLogin/register/register.component';
 
 
 const Approutes: Routes = [
@@ -26,7 +33,7 @@ const Approutes: Routes = [
     component : HomeComponentComponent
   },
   {
-    path: 'home', 
+    path: 'home1', 
     component : HomeComponentComponent
   },
   {
@@ -45,7 +52,7 @@ const Approutes: Routes = [
 
   {path: 'd', component: LoginComponent},
   {path: 'lock', component: LockComponent},
-  {path: 'register', component: RegisterComponent},
+  {path: 'register1', component: RegisterComponent},
   {path: 'dashboard', component: RootComponent, 
      children: [
     {path: '', component: HomeComponent},
@@ -57,9 +64,25 @@ const Approutes: Routes = [
     {path: 'components/price-table', component: PriceTableComponent},
     {path: 'components/panels', component: PanelsComponent},
     {path: 'components/wizard', component: WizardComponent}
+
   ]},
 
-  { path: 'applicationform', component: FormsComponent }
+  { path: 'applicationform', component: FormsComponent },
+
+
+
+
+
+   { path: 'home', component: LoginHomeComponent },
+  { path: 'login', component: SignUpLoginComponent },
+  { path: 'register', component: LoginRegisterComponent },
+  { path: 'profile', component: LoginProfileComponent },
+
+  
+  { path: 'user', component: BoardUserComponent },
+  { path: 'mod', component: BoardModeratorComponent },
+  { path: 'admin', component: BoardAdminComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
 // export default Approutes;

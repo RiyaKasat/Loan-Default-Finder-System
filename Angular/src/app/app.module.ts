@@ -66,6 +66,14 @@ import { RadioButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { GridModule } from '@syncfusion/ej2-angular-grids';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
+import { SignuploginModule } from './SignUpLogin/signuplogin.module';
+// import { RegisterComponent } from './SignUpLogin/register/register.component';
+// import { ProfileComponent } from './SignUpLogin/profile/profile.component';
+// import { BoardAdminComponent } from './SignUpLogin/board-admin/board-admin.component';
+// import { BoardModeratorComponent } from './SignUpLogin/board-moderator/board-moderator.component';
+// import { BoardUserComponent } from './SignUpLogin/board-user/board-user.component';
+// import { LoginComponent } from './SignUpLogin/login/login.component';
+// import { SignuploginModule } from './SignUpLogin/signuplogin.module';
 
 
 
@@ -96,7 +104,13 @@ import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
     StatementComponent,
     BarChartComponent,
     GridAppComponent,
-    routingComponents
+    routingComponents,
+    // RegisterComponent,
+    // ProfileComponent,
+    // BoardAdminComponent,
+    // BoardModeratorComponent,
+    // BoardUserComponent,
+    // LoginComponent
     
   
     
@@ -147,6 +161,8 @@ import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
     NgxIntlTelInputModule,
     
     NgbProgressbarModule,
+
+    SignuploginModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable
