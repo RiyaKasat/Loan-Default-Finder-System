@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { Subscription } from 'rxjs';
+import { SendEmailService } from 'src/app/send-email.service';
 import {
   Country,
   UsernameValidator,
@@ -18,6 +20,7 @@ import {
 })
 export class FormsComponent implements OnInit {
 
+  public subscription: Subscription;
   userDetailsForm: FormGroup;
   accountDetailsForm: FormGroup;
 
@@ -84,7 +87,7 @@ export class FormsComponent implements OnInit {
     ]
   }
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private sendmailservice: SendEmailService) { }
 
   ngOnInit() {
     this.createForms();
@@ -155,4 +158,44 @@ export class FormsComponent implements OnInit {
     console.log(value);
   }
 
+
+
+
+  infoForm = this.fb.group({
+    name: ['', [
+      Validators.required,
+      Validators.minLength(3)
+    ]
+    ],
+    email: ['', [
+      Validators.required,
+      Validators.email
+    ]
+    ]
+  });
+
+  get name() { return this.infoForm.get('name'); }
+  get email() { return this.infoForm.get('email'); }
+
+
+  sendMail() {
+    console.log(this.infoForm.value);
+    this.subscription = this.sendmailservice.sendEmail(this.infoForm.value).
+    subscribe(data => {
+      let msg = data['message']
+      alert(msg);
+      // console.log(data, "success");
+    }, error => {
+      console.error(error, "error");
+    } );
+  }
+
+ 
+  ngOnDestroy() {
+  }
+
 }
+
+  
+
+

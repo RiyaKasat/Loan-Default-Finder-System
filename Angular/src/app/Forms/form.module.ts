@@ -20,6 +20,7 @@ import { FormsMainComponent } from './formsMain.component';
 import { FileUploadModule } from '../file-upload/file-upload.module';
 import { ContactUsFormComponent } from './contact-us-form/contact-us-form.component';
 import { EnquiryFormComponent } from './enquiry-form/enquiry-form.component';
+import { SendEmailService } from '../send-email.service';
 
 
 
@@ -55,6 +56,9 @@ import { EnquiryFormComponent } from './enquiry-form/enquiry-form.component';
   [
     FormsComponent,
     FormsMainComponent,
+  ],
+  providers:[
+    SendEmailService
   ]
 })
 export class FormModule { }

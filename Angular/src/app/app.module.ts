@@ -61,6 +61,7 @@ import { FormModule } from './Forms/form.module';
 import { NgbProgressbarModule } from '@ng-bootstrap/ng-bootstrap';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { FileUploadModule } from './file-upload/file-upload.module';
+import { SendEmailService } from './send-email.service';
 
 @NgModule({
   declarations: [
@@ -148,7 +149,7 @@ import { FileUploadModule } from './file-upload/file-upload.module';
     })
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [HttpClient, DataService],
+  providers: [HttpClient, DataService, SendEmailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
