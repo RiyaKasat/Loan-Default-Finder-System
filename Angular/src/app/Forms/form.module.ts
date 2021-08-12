@@ -21,7 +21,9 @@ import { FileUploadModule } from '../file-upload/file-upload.module';
 import { ContactUsFormComponent } from './contact-us-form/contact-us-form.component';
 import { EnquiryFormComponent } from './enquiry-form/enquiry-form.component';
 import { SendEmailService } from '../send-email.service';
-
+import {MatIconModule} from '@angular/material/icon';
+import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
+import {NgxMatIntlTelInputModule} from 'ngx-mat-intl-tel-input';
 
 
 
@@ -50,7 +52,10 @@ import { SendEmailService } from '../send-email.service';
     MatNativeDateModule,
     MatCheckboxModule,
     MatSelectModule,
-    FileUploadModule
+    FileUploadModule,
+    MatIconModule,
+    NgxIntlTelInputModule,
+    NgxMatIntlTelInputModule
   ],
   exports:
   [

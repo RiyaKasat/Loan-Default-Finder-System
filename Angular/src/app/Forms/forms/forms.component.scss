@@ -34,8 +34,8 @@ app-forms-page {
 
 
   .full-width {
-    width: 100%;
-    margin-bottom: 10px;
+    width: 80%;
+    margin-bottom: 20px;
   }
 
   .error-message {
@@ -75,4 +75,42 @@ app-forms-page {
 .dropZoneColorDrop {
   border: 3px dotted rgba(0,0,0,0.08);
   background-color: rgba(0,0,0,0.12)
+}
+
+
+
+//Mobile Number
+
+p {
+  font-family: Lato;
+}
+
+.country-selector{
+  opacity:1 !important;
+  bottom:8px !important;
+}
+
+// input:not(.country-search){
+//   bottom: 3px;
+//   left: 10px;
+// }
+
+.country-list-button{
+  font-size: 0.8rem!important;
+}
+
+.mat-menu-content:not(:empty){
+  max-height:250px;
+}
+ 
+.mat-form-field{
+    width: 80%;
+}
+
+// .m-t-10{
+//   margin-top:10px;
+// }
+
+.error{
+  color:red;
 }

@@ -22,6 +22,10 @@ import { FormsComponent } from './Forms/forms/forms.component';
 
 const Approutes: Routes = [
   {
+    path: '', 
+    component : HomeComponentComponent
+  },
+  {
     path: 'home', 
     component : HomeComponentComponent
   },

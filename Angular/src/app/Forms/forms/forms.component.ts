@@ -1,7 +1,9 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { SendEmailService } from 'src/app/send-email.service';
+import { SearchCountryField, CountryISO, PhoneNumberFormat } from 'ngx-intl-tel-input';
 import {
   Country,
   UsernameValidator,
@@ -58,7 +60,12 @@ export class FormsComponent implements OnInit {
     'phone': [
       { type: 'required', message: 'Phone is required' },
       { type: 'validCountryPhone', message: 'Phone incorrect for the country selected' }
-    ]
+    ],
+
+    'loanamount': [
+      { type: 'required', message: 'Loan Amount is required' },
+      { type: 'pattern', message: 'Loan Amount must contain only numbers' },
+     ],
   };
 
   account_validation_messages = {
@@ -84,10 +91,17 @@ export class FormsComponent implements OnInit {
     ],
     'terms': [
       { type: 'pattern', message: 'You must accept terms and conditions' }
-    ]
+    ],
   }
 
-  constructor(private fb: FormBuilder, private sendmailservice: SendEmailService) { }
+  
+  phoneNumber;
+  constructor(private fb: FormBuilder, private sendmailservice: SendEmailService,  private router: Router) { 
+    this.userDetailsForm = this.fb.group({
+      phone: [undefined, [Validators.required]],
+
+  });
+}
 
   ngOnInit() {
     this.createForms();
@@ -124,10 +138,10 @@ export class FormsComponent implements OnInit {
     // user details form validations
     this.userDetailsForm = this.fb.group({
       fullname: ['Homero Simpson', Validators.required ],
-      bio: ["Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s", Validators.maxLength(256)],
       birthday: ['', Validators.required],
       gender: new FormControl(this.genders[0], Validators.required),
-      country_phone: this.country_phone_group
+      country_phone: this.country_phone_group,
+      loanamount: ['', [Validators.required, Validators.pattern("^[0-9]*$")]]
     });
 
 
@@ -194,7 +208,20 @@ export class FormsComponent implements OnInit {
   ngOnDestroy() {
   }
 
-}
+  goToPreviousPage() {
+    this.router.navigate(['repository/Admin']);
+  }
+
+  
+ 
+  // constructor( private fb: FormBuilder){
+  //     this.myForm = this.fb.group({
+  //         phone: [undefined, [Validators.required]],
+  //   });
+  }
+
+
+
 
   
 

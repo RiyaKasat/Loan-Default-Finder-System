@@ -30,11 +30,11 @@ import { CalculatorLoanComponent } from './calculator-loan/calculator-loan.compo
 
 
 import { NumericTextBoxModule, SliderModule } from '@syncfusion/ej2-angular-inputs';
-import { RadioButtonModule } from '@syncfusion/ej2-angular-buttons';
+// import { RadioButtonModule } from '@syncfusion/ej2-angular-buttons';
 
 import { AccumulationChartModule, ChartModule } from '@syncfusion/ej2-angular-charts';
-import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
-import { GridModule } from '@syncfusion/ej2-angular-grids';
+// import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
+// import { GridModule } from '@syncfusion/ej2-angular-grids';
 
 import { HomeComponent } from './calculator-loan/home/home.component';
 import { InputComponent } from './calculator-loan/home/input/input.component';
@@ -62,6 +62,12 @@ import { NgbProgressbarModule } from '@ng-bootstrap/ng-bootstrap';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { FileUploadModule } from './file-upload/file-upload.module';
 import { SendEmailService } from './send-email.service';
+import { RadioButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
+import { GridModule } from '@syncfusion/ej2-angular-grids';
+import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
+
+
 
 @NgModule({
   declarations: [
@@ -110,7 +116,7 @@ import { SendEmailService } from './send-email.service';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule ,
-   
+    
     BrowserModule,
     NumericTextBoxModule,
     SliderModule,
@@ -138,8 +144,8 @@ import { SendEmailService } from './send-email.service';
     UserDashboardModule,
     FormModule,
     FileUploadModule ,
+    NgxIntlTelInputModule,
     
-
     NgbProgressbarModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
