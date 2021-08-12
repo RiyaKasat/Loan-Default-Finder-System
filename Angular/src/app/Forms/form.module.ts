@@ -18,6 +18,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsComponent } from './forms/forms.component';
 import { FormsMainComponent } from './formsMain.component';
 import { FileUploadModule } from '../file-upload/file-upload.module';
+import { ContactUsFormComponent } from './contact-us-form/contact-us-form.component';
+import { EnquiryFormComponent } from './enquiry-form/enquiry-form.component';
 
 
 
@@ -30,6 +32,8 @@ import { FileUploadModule } from '../file-upload/file-upload.module';
   
     FormsComponent,
     FormsMainComponent,
+    ContactUsFormComponent,
+    EnquiryFormComponent,
 
   ],
   imports: [
