@@ -1,14 +1,16 @@
 const express = require("express");
 const app = express();
+var router = express.Router();
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const mysql = require("mysql2");
 const cors = require("cors");
-
+var loan_offers;
 const nodemailer=require('nodemailer');
 const SMTPTransport = require('nodemailer/lib/smtp-transport');
 
 const db = require("./models");
+
 
 
 const bodyParser=require('body-parser');
@@ -22,8 +24,8 @@ app.use(bodyParser.json())
 var connection = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password:"Riya123456789",
-    database:"loansystem",
+    password:"",
+    database:"loanSystem",
     port:"3306"
 })
 
@@ -36,13 +38,39 @@ connection.connect((err) =>
     }
     else{
         console.log("connected")
+        
     }
+
 })
 
 // connection.query(`select * from loansystem.persons`, function (err, result, fields) {
 //   if (err) throw err;
 //   console.log(result);
 // });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// connection.query(`select * from loanSystem.lender_offerings`,(err,res)=>{
+    
+//   return console.log(res);
+// })
+
+
 
 dotenv.config();
 
@@ -75,6 +103,26 @@ var corsOptions = {
 
 app.use(cors(corsOptions));
 
+app.get('/data', function(req, res)
+{
+  
+ //loan_offers=res.data;
+ res.send('data',{title:'loan_offers',loanData: res}); 
+
+});
+
+
+
+app.get('/user-list', function(req, res, next) {
+  var sql='SELECT * FROM loanSystem.lender_offerings';
+  db.query(sql, function (err, data, fields) {
+  if (err) throw err;
+  res.render('user-list', { title: 'User List', userData: data});
+});
+});
+module.exports = router;
+
+
 
 //SignUpLogin
 const Role = db.role;
@@ -100,6 +148,9 @@ function initial() {
     name: "admin"
   });
 }
+
+
+
   
 
 require('./routes/auth.routes')(app);
@@ -117,6 +168,8 @@ require('./routes/user.routes')(app);
 // app.use(cors(corsOptions));
 
 const initRoutes = require("../Node Backend/routes");
+const { on } = require("nodemon");
+const { response } = require("express");
 
 app.use(express.urlencoded({ extended: true }));
 initRoutes(app);
