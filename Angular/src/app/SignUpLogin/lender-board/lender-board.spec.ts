@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BoardModeratorComponent } from './board-moderator.component';
+import { BoardModeratorComponent } from './lender-board';
 
 describe('BoardModeratorComponent', () => {
   let component: BoardModeratorComponent;

@@ -6,7 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from '../app-routing.module';
 
 import { BoardAdminComponent } from './board-admin/board-admin.component';
-import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
+import { BoardModeratorComponent } from './lender-board/lender-board';
 import { BoardUserComponent } from './board-user/board-user.component';
 import { LoginHomeComponent } from './home/home.component';
 import { SignUpLoginComponent } from './login/login.component';

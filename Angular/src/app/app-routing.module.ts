@@ -19,7 +19,7 @@ import { LoginComponent } from './user-dashboard/page/login/login.component';
 import { RegisterComponent } from './user-dashboard/page/register/register.component';
 import { FormsComponent } from './Forms/forms/forms.component';
 import { BoardAdminComponent } from './SignUpLogin/board-admin/board-admin.component';
-import { BoardModeratorComponent } from './SignUpLogin/board-moderator/board-moderator.component';
+import { BoardModeratorComponent } from './SignUpLogin/lender-board/lender-board';
 import { BoardUserComponent } from './SignUpLogin/board-user/board-user.component';
 import { LoginHomeComponent } from './SignUpLogin/home/home.component';
 import { SignUpLoginComponent } from './SignUpLogin/login/login.component';
