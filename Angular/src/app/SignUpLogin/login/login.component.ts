@@ -1,17 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { AuthService } from '../_services/auth.service';
 import { TokenStorageService } from '../_services/token-storage.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.scss']
 })
 export class SignUpLoginComponent implements OnInit {
   form: any = {
-    username: null,
+    email: null,
     password: null
-  };
+  }
+  //loginDetailsForm: FormGroup;
   isLoggedIn = false;
   isLoginFailed = false;
   errorMessage = '';
@@ -26,10 +28,21 @@ export class SignUpLoginComponent implements OnInit {
     }
   }
 
-  onSubmit(): void {
-    const { username, password } = this.form;
 
-    this.authService.login(username, password).subscribe(
+
+  account_validation_messages={
+    'email': [
+    { type: 'required', message: 'Email is required' },
+    { type: 'pattern', message: 'Enter a valid email' }
+  ]}
+  
+
+
+
+  onSubmit(): void {
+    const { email, password } = this.form;
+
+    this.authService.login(email, password).subscribe(
       data => {
         this.tokenStorage.saveToken(data.accessToken);
         this.tokenStorage.saveUser(data);

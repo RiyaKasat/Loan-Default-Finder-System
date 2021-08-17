@@ -14,6 +14,7 @@ import { LoginProfileComponent } from './profile/profile.component';
 import { LoginRegisterComponent } from './register/register.component';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { SignUpLoginComponent1 } from './sign-up-login.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 
@@ -33,6 +34,7 @@ import { SignUpLoginComponent1 } from './sign-up-login.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    MatFormFieldModule,
     HttpClientModule
   ],
 
