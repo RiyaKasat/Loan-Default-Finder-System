@@ -29,4 +29,30 @@ module.exports = function(app) {
     [authJwt.verifyToken, authJwt.isAdmin],
     controller.adminBoard
   );
+
+  app.get("/api/test/getAllAdmins",
+  [authJwt.verifyToken, authJwt.isAdmin],
+  controller.findAllAdmins
+  );
+
+  app.get("/api/test/getAllUsers",
+  controller.findAllUsers
+  );
+
+  app.get("/api/test/getAllUserRoles",
+  controller.findAllUser_Roles
+  );
+
+ 
+  
+  
+  app.get("/api/test/getAllModerators",
+  [authJwt.verifyToken, authJwt.isAdmin],
+  controller.  findAllModerators
+  );
+
+
+  
+
+
 };
