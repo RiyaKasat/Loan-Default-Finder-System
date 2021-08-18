@@ -6,7 +6,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from '../app-routing.module';
 
 import { BoardAdminComponent } from './board-admin/board-admin.component';
-import { BoardModeratorComponent } from './lender-board/lender-board';
 import { BoardUserComponent } from './board-user/board-user.component';
 import { LoginHomeComponent } from './home/home.component';
 import { SignUpLoginComponent } from './login/login.component';
@@ -15,7 +14,7 @@ import { LoginRegisterComponent } from './register/register.component';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { SignUpLoginComponent1 } from './sign-up-login.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
-
+import { LenderBoardComponent } from './lender-board/lender-board.component';
 
 
 @NgModule({
@@ -26,7 +25,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     LoginHomeComponent,
     LoginProfileComponent,
     BoardAdminComponent,
-    BoardModeratorComponent,
+    LenderBoardComponent,
     BoardUserComponent,
     SignUpLoginComponent1
   ],
@@ -45,9 +44,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     LoginHomeComponent,
     LoginProfileComponent,
     BoardAdminComponent,
-    BoardModeratorComponent,
-    BoardUserComponent,
-    SignUpLoginComponent1
+    LenderBoardComponent,
+    BoardUserComponent
   ],
   providers: [authInterceptorProviders],
   bootstrap: [SignuploginModule]
