@@ -32,13 +32,13 @@ exports.createLoanApplication = (req, res) => {
         contact: req.body.contact,
         company_pancard: req.body.company_pancard,
         company_name: req.body.company_name,
+        companyAddress: req.body.companyAddress,
         businessPremise: req.body.businessPremise,
         pincode: req.body.pincode,
         salesLastYear: req.body.salesLastYear,
         yearsInCurrentSales: req.body.yearsInCurrentSales,
         state: req.body.state,
         city: req.body.city,
-        loanRepaymentAccountNo: req.body.loanRepaymentAccountNo,
         userId: req.body.userId,   //Applicant
         lenderOfferingId: req.body.lenderOfferingId,
         lender_email : req.body.lender_email,
@@ -99,7 +99,7 @@ exports.findAllLoanApplications = (req, res) => {
 
 
 
-   
+
    exports.findAllLoanApplicationsbyAdminId = async (req, res) => {
     loan_application.findAll(
       {

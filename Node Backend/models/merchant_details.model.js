@@ -2,21 +2,15 @@ module.exports = function (sequelize, DataTypes) {
     
     return sequelize.define('merchant_details', {
  
-//     merchantDetailsId: {
-//     type:DataTypes.INTEGER(11),
-//     allowNull:false,
-//     primaryKey:true,
-//     autoIncrement:true
-//           },
     bankName: {
     type:DataTypes.STRING,
     allowNull:false
           },
+
     accountNumber: {
     type:DataTypes.STRING,
-    allowNull:false,
+    allowNull:false  },
     
-          },
     isfcCode: {
     type:DataTypes.STRING,
     allowNull:false,
