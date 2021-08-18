@@ -24,7 +24,7 @@ app.use(bodyParser.json())
 var connection = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password:"",
+    password:"Riya123456789",
     database:"loanSystem",
     port:"3306"
 })
@@ -155,6 +155,7 @@ function initial() {
 
 require('./routes/auth.routes')(app);
 require('./routes/user.routes')(app);
+require('./routes/common')(app);
 
 
 // Enable preflight requests for all routes

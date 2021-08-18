@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserDashboardService } from './user-dashboard.service';
 
 @Component({
   selector: 'app-user-dashboard',
@@ -8,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 export class UserDashboardComponent implements OnInit {
 
   title = 'app works!';
+ 
+
   constructor() { }
 
   ngOnInit(): void {
+    console.log("hello");
+    
   }
 
+  
 }

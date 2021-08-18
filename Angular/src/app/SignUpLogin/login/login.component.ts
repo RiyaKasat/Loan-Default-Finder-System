@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from '../_services/auth.service';
 import { TokenStorageService } from '../_services/token-storage.service';
+
 
 @Component({
   selector: 'app-login',
@@ -19,7 +21,8 @@ export class SignUpLoginComponent implements OnInit {
   errorMessage = '';
   roles: string[] = [];
 
-  constructor(private authService: AuthService, private tokenStorage: TokenStorageService) { }
+  constructor(private authService: AuthService, private tokenStorage: TokenStorageService,
+    private router: Router) { }
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
@@ -57,9 +60,13 @@ export class SignUpLoginComponent implements OnInit {
         this.isLoginFailed = true;
       }
     );
+
+  
   }
 
   reloadPage(): void {
-    window.location.reload();
+    this.router.navigate(['/dashboard'])
+    // window.location.reload();
+   
   }
 }
