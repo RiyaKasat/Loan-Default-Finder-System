@@ -16,6 +16,11 @@ import { SignUpLoginComponent1 } from './sign-up-login.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { LenderBoardComponent } from './lender-board/lender-board.component';
 
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatButtonModule } from '@angular/material/button';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatInputModule } from '@angular/material/input';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -34,7 +39,12 @@ import { LenderBoardComponent } from './lender-board/lender-board.component';
     AppRoutingModule,
     FormsModule,
     MatFormFieldModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCheckboxModule,
+    MatButtonModule,
+    MatRadioModule,
+    MatInputModule,
+    MatMenuModule
   ],
 
   exports:[

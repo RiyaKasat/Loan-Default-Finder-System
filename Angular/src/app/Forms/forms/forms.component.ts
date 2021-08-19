@@ -11,6 +11,7 @@ import {
   ParentErrorStateMatcher,
   PhoneValidator
 } from '../validators';
+import Stepper from 'bs-stepper';
 
 
 @Component({
@@ -26,8 +27,16 @@ export class FormsComponent implements OnInit {
   userDetailsForm: FormGroup;
   accountDetailsForm: FormGroup;
 
+  // next() {
+  //   this.stepper.next();
+  // }
+  // onSubmit() {
+  //   return false;
+  // }
   matching_passwords_group: FormGroup;
   country_phone_group: FormGroup;
+  address:FormGroup;
+  pan:FormGroup;
 
   parentErrorStateMatcher = new ParentErrorStateMatcher();
 
@@ -66,6 +75,20 @@ export class FormsComponent implements OnInit {
       { type: 'required', message: 'Loan Amount is required' },
       { type: 'pattern', message: 'Loan Amount must contain only numbers' },
      ],
+     'address':[
+       {type:'required', message:'Address is required'}
+     ],
+     'pincode':[
+       {type:'required', message:'Pincode is required'},
+       {type: 'pattern', message:'Pincode must contain only numbers'}
+     ],
+     'state':[
+      {type:'required', message:'State is required'}
+    ],
+    'city':[
+      {type:'required', message:'City is required'}
+    ],
+    
   };
 
   account_validation_messages = {
@@ -92,6 +115,29 @@ export class FormsComponent implements OnInit {
     'terms': [
       { type: 'pattern', message: 'You must accept terms and conditions' }
     ],
+    'pan':[
+      {type: 'required', message: 'PAN no is required'},
+      {type: 'pattern', message:'Enter valid PAN no'}
+    ],
+    companyName:[
+      {type:'required', message:'Company Name is required'}
+    ],
+    businessPremise:[
+      {type:'required', message:'Business Premise is required'}
+    ],
+    lastYearSales:[
+      {type:'required', message:'Sales of last year is required'}
+    ],
+    establishedYears:[
+      {type:'required', message:'Sales of last year is required'}
+    ],
+    'repaymentAccNo':[
+      {type: 'required', message: 'Loan Repayment Account Number is required'},
+      {type: 'pattern', message:'Enter valid Loan Repayment Account Number'}
+    ],
+    businessType:[
+      {type:'required', message:'Business Type is required required'}
+    ]
   }
 
   
@@ -101,6 +147,10 @@ export class FormsComponent implements OnInit {
       phone: [undefined, [Validators.required]],
 
   });
+}
+
+goformi(){
+  this.router.navigate(['bankdetails']);
 }
 
   ngOnInit() {
@@ -137,14 +187,18 @@ export class FormsComponent implements OnInit {
 
     // user details form validations
     this.userDetailsForm = this.fb.group({
-      fullname: ['Homero Simpson', Validators.required ],
+      fullname: ['', Validators.required ],
       birthday: ['', Validators.required],
       gender: new FormControl(this.genders[0], Validators.required),
       country_phone: this.country_phone_group,
-      loanamount: ['', [Validators.required, Validators.pattern("^[0-9]*$")]]
+      loanamount: ['', [Validators.required, Validators.pattern("^[0-9]*$")]],
+      address: ['', Validators.required],
+      pincode: ['', [Validators.required, Validators.pattern("^[0-9]*$")]],
+      state: ['', Validators.required],
+      city: ['', Validators.required],
     });
 
-
+ 
     // user links form validations
     this.accountDetailsForm = this.fb.group({
       username: new FormControl('', Validators.compose([
@@ -158,6 +212,13 @@ export class FormsComponent implements OnInit {
         Validators.required,
         Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
       ])),
+      pan:['',[Validators.required, Validators.pattern("^([a-zA-Z]([a-zA-Z]([a-zA-Z]([a-zA-Z]([a-zA-Z]([0-9]([0-9]([0-9]([0-9]([a-zA-Z])?)?)?)?)?)?)?)?)?)?$")]],
+      companyName:['',[Validators.required]],
+      businessPremise:['',[Validators.required]],
+      lastYearSales:['',[Validators.required]],
+      establishedYears:['',[Validators.required]],
+      businessType:['',[Validators.required]],
+      repaymentAccNo:['', [Validators.required, Validators.pattern("^[0-9]*$")]],
       matching_passwords: this.matching_passwords_group,
       terms: new FormControl(false, Validators.pattern('true'))
     })

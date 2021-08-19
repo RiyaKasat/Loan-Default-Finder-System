@@ -1,4 +1,4 @@
-<div class="col-md-12">
+<!-- <div class="col-md-12">
     <div class="card card-container">
       <img
         id="profile-img"
@@ -83,4 +83,139 @@
         Your registration is successful!
       </div>
     </div>
-  </div>
+  </div> -->
+
+
+
+  <!-- new registration -->
+
+
+  <div class="container">
+    <div class="background"></div>
+      <div class="container">
+        <div class="row">
+        <!-- <app-header></app-header> -->
+      
+          <div class="row register-panel">
+            <div class="col-md-10 col-md-offset-1">
+            <div class="card">
+              <h2>Register</h2>
+              <div class="row">
+                <div class="col-md-5 col-md-offset-1">
+                  <div class="feature">
+                    <div class="icon">
+                    <i class="material-icons" style="color: #e91e63;">timeline</i>
+                    </div>
+                    <div class="desc">
+                    <h4>Marking</h4>
+                    <p>We've created the marketing campaign of the website. It was a very interesting collaboration.</p>
+                    </div>
+                  </div>
+                  <div class="feature">
+                  <div class="icon">
+                    <i class="material-icons" style="color: #9c27b0;">code</i>
+                  </div>
+                  <div class="desc">
+                    <h4>Fully Coded in HTML5</h4>
+                    <p>We've developed the website with HTML5 and CSS3. The client has access to the code using GitHub.</p>
+                  </div>
+                  </div>
+                <div class="feature">
+                  <div class="icon">
+                    <i class="material-icons" style="color: #00bcd4;">group</i>
+                  </div>
+                  <div class="desc">
+                    <h4>Built Audience</h4>
+                    <p>There is also a Fully Customizable CMS Admin Dashboard for this product.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div class="form-part">
+                  <div class="socials">
+                    <a mat-mini-fab style="background-color: #55acee;"><i class="fa fa-twitter"></i></a>
+                    <a mat-mini-fab style="background-color: #ea4c89; margin: 0 5px;"><i class="fa fa-dribbble"></i></a>
+                    <a mat-mini-fab style="background-color: #3b5998;"><i class="fa fa-facebook"></i></a>
+                  </div>
+                  <!-- <h6 style="margin-bottom: 30px">or be classical</h6> -->
+                  <form
+                  *ngIf="!isSuccessful"
+                  name="form"
+                  (ngSubmit)="f.form.valid && onSubmit()"
+                  #f="ngForm"
+                  novalidate>
+                  <div class="row">
+                    <i class="material-icons">face</i>
+                    <mat-form-field color="accent">
+                      <input type="text" matInput placeholder="Name">
+                    </mat-form-field>
+                  </div>
+                  <div class="form-group">
+                  <div class="row">
+                    <i class="material-icons">email</i>
+                    <mat-form-field color="accent">
+                      <input type="text"
+                      class="form-control"
+                      name="username"
+                      [(ngModel)]="form.username"
+                      required
+                      #username="ngModel" matInput placeholder="Email">
+                    </mat-form-field>
+                  </div>
+                  </div>
+                  <div class="alert-danger" *ngIf="username.errors && f.submitted">
+                    <div *ngIf="username.errors.required">Email is required</div>
+                    <!-- <div *ngIf="username.errors.minlength">
+                      Username must be at least 3 characters
+                    </div> -->
+                    <!-- <div *ngIf="username.errors.maxlength">
+                      Username must be at most 20 characters
+                    </div> -->
+                   </div>
+                   <div class="form-group">
+                  <div class="row">
+                    <i class="material-icons">lock_outline</i>
+                    <mat-form-field color="accent">
+                      <input type="password"
+                      class="form-control"
+                      name="password"
+                      [(ngModel)]="form.password"
+                      required
+                      minlength="6"
+                      #password="ngModel" matInput placeholder="Password">
+                    </mat-form-field>
+                  </div>
+                </div>
+                  <div class="alert-danger" *ngIf="password.errors && f.submitted">
+                    <div *ngIf="password.errors.required">Password is required</div>
+                    <div *ngIf="password.errors.minlength">
+                      Password must be at least 6 characters
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <mat-checkbox style="margin-left: 2px"><p style="margin-left: 8px">I agree to the <span style="color: #9c27b0; cursor: pointer; font-weight: 400;">terms and conditions</span>.</p></mat-checkbox>
+                  </div>
+                  <div class="form-group">
+                  <div class="row" style="display: flex; justify-content: center">
+                    <button mat-raised-button class="btn btn-primary btn-round">GET STARTED</button>
+                  </div>
+                </div>
+                
+                  <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+                    Signup failed!<br />{{ errorMessage }}
+                  </div>
+                </form>
+                </div>
+                </div>
+                <div class="alert alert-success" *ngIf="isSuccessful">
+                  Your registration is successful!
+                </div>
+              
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>

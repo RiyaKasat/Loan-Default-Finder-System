@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-sticky-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#">FINLONA</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -11,7 +11,7 @@
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" routerLink="/dashboard" routerLinkActive="router-active">Dashboard</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -19,7 +19,7 @@
                         Dropdown
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" routerLink="/dashboard" routerLinkActive="router-active">Dashboard</a></li>
                         <li><a class="dropdown-item" href="#">Another action</a></li>
                         <li>
                             <hr class="dropdown-divider">
@@ -28,7 +28,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    <a class="nav-link active" routerLink="/applicationform" routerLinkActive="router-active">Apply Loan</a>
                 </li>
             </ul>
             <!-- <form class="d-flex">
@@ -36,5 +36,12 @@
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form> -->
         </div>
+        <div class="right">
+            <!-- <button class="btn-sm danger"><a routerLink="/dashboard" routerLinkActive="router-active"><i class="material-icons">dashboard</i><p>DASHBOARD</p></a></button> -->
+            <button class="btn-sm danger" style="color: black"><a routerLink="/register" routerLinkActive="router-active"><i class="material-icons">person_add</i><p>REGISTER</p></a></button>
+            <button class="btn-sm dark" style="color: black"><a routerLink="/login" routerLinkActive="router-active" [routerLinkActiveOptions]="{exact: true}"><i class="material-icons">fingerprint</i><p>LOGIN</p></a></button>
+            
+            <!-- <a routerLink="/lock" style="margin-right: 0" routerLinkActive="router-active"><i class="material-icons">lock_open</i><p>LOCK</p></a> -->
+          </div>
     </div>
 </nav>

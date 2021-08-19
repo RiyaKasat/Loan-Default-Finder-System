@@ -68,6 +68,7 @@ import { GridModule } from '@syncfusion/ej2-angular-grids';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { SignuploginModule } from './SignUpLogin/signuplogin.module';
 import { LenderDashboardComponent } from './lender-dashboard/lender-dashboard.component';
+
 // import { RegisterComponent } from './SignUpLogin/register/register.component';
 // import { ProfileComponent } from './SignUpLogin/profile/profile.component';
 // import { BoardAdminComponent } from './SignUpLogin/board-admin/board-admin.component';
@@ -107,6 +108,7 @@ import { LenderDashboardComponent } from './lender-dashboard/lender-dashboard.co
     GridAppComponent,
     routingComponents,
     LenderDashboardComponent,
+   
     // RegisterComponent,
     // ProfileComponent,
     // BoardAdminComponent,

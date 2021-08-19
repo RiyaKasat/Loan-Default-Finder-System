@@ -1,0 +1,40 @@
+<!-- <p>form-i works!</p> -->
+<div class="container" style="">
+    
+  
+  
+     
+        <!-- <h2 class="section-title">User details</h2> -->
+        <mat-label class="text-center">Bank/Security Details</mat-label>
+        <form [formGroup]="bankDetailsForm" (ngSubmit)="onSubmitBankDetails(bankDetailsForm.value)">
+            <mat-form-field class="full-width">
+                <input matInput placeholder="Loan Repayment Account No." formControlName="repaymentAccNo" required>
+                <mat-error *ngFor="let validation of validation_messages.repaymentAccNo">
+                  <mat-error class="error-message" *ngIf="bankDetailsForm.get('repaymentAccNo').hasError(validation.type) && (bankDetailsForm.get('repaymentAccNo').dirty || bankDetailsForm.get('repaymentAccNo').touched)">{{validation.message}}</mat-error>
+                </mat-error>
+              </mat-form-field>
+
+              <mat-form-field class="full-width">
+                <input matInput placeholder="Security" formControlName="security" required>
+                <mat-error *ngFor="let validation of validation_messages.security">
+                  <mat-error class="error-message" *ngIf="bankDetailsForm.get('security').hasError(validation.type) && (bankDetailsForm.get('security').dirty || bankDetailsForm.get('security').touched)">{{validation.message}}</mat-error>
+                </mat-error>
+              </mat-form-field>
+
+              <mat-form-field class="full-width">
+                <input matInput placeholder="Risk Score" formControlName="risk" [disabled]="true" value="Calculated Risk" required>
+                <!-- <mat-error *ngFor="let validation of validation_messages.risk"> -->
+                  <!-- <mat-error class="error-message" *ngIf="bankDetailsForm.get('risk').hasError(validation.type) && (bankDetailsForm.get('risk').dirty || bankDetailsForm.get('risk').touched)">{{validation.message}}</mat-error>
+                </mat-error> -->
+              </mat-form-field><br>
+
+              <mat-label>Bank Statement of Last 6 months *</mat-label>
+        <app-file-upload></app-file-upload>
+
+              <button class="submit-btn" color="primary" mat-raised-button type="submit" [disabled]="!bankDetailsForm.valid">
+                Submit
+              </button>
+        </form>
+     
+    
+      </div>
