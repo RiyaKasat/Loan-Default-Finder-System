@@ -19,7 +19,15 @@ export class SidebarComponent implements OnInit, AfterViewInit, OnDestroy {
     this.normalFontColor = 'rgba(255,255,255,.8)';
     this.dividerBgColor = 'rgba(255, 255, 255, 0.5)';
   }
-
+  public onMenuClose(){
+    console.log("menu closed");
+  }
+  public onMenuOpen(){
+    console.log("menu Opened");
+  }
+  private onItemSelect(item:any){
+    console.log(item);
+  }
   ngOnInit() {
     this.color = this.settingsService.getSidebarFilter();
     this.settingsService.sidebarFilterUpdate.subscribe((filter: string) => {

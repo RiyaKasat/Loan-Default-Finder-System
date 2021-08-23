@@ -2,6 +2,8 @@ export const ROUTES = [
     { path: '/dashboard', title: 'Dashboard', icon: 'dashboard', children: null },
     { path: 'profile', title: 'User Profile', icon: 'person', children: null },
     { path: 'table', title: 'Table List', icon: 'content_paste', children: null },
+    { path: 'loancalculator', title: 'Loan Calculator', icon: 'content_paste', children: null },
+    
     // { path: '#component', id: 'component', title: 'Component', icon: 'apps', children: [
     //     {path: 'components/price-table', title: 'Price Table', icon: 'PT'},
     //     {path: 'components/panels', title: 'Panels', icon: 'P'},

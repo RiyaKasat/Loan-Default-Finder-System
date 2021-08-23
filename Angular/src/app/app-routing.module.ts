@@ -27,6 +27,7 @@ import { LoginProfileComponent } from './SignUpLogin/profile/profile.component';
 import { LoginRegisterComponent } from './SignUpLogin/register/register.component';
 import { FormIComponent } from './Forms/form-i/form-i.component';
 import { AdminAddOfferComponent } from './Forms/admin-add-offer/admin-add-offer.component';
+import { ContactUsFormComponent } from './Forms/contact-us-form/contact-us-form.component';
 
 
 const Approutes: Routes = [
@@ -61,6 +62,10 @@ const Approutes: Routes = [
     {path: '', component: HomeComponent},
     {path: 'profile', component: ProfileComponent},
     {path: 'table', component: TableComponent},
+    {
+      path: 'loancalculator', 
+      component : LoanComponentComponent
+    },
     {path: 'notification', component: NotificationComponent},
     {path: 'alert', component: SweetAlertComponent},
     {path: 'settings', component: SettingsComponent},
@@ -77,6 +82,10 @@ const Approutes: Routes = [
   },
   {
     path:'adminoffer',component:AdminAddOfferComponent
+  },
+
+  {
+    path:'contact-us',component:ContactUsFormComponent
   },
 
 

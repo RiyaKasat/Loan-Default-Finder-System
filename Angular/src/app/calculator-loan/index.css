@@ -494,7 +494,7 @@ h6 {
 }
 
 body {
-  background-color: #162036;
+  /* background-color: #162036; */
   color: #E7E7E7;
 }
 
@@ -750,7 +750,7 @@ body {
 
 @media (min-width: 992px) and (max-width: 1200px) {
   .left-content {
-    min-width: 450px;
+    /* min-width: 450px; */
     padding: 0 20px;
     margin-bottom: 40px;
   }
@@ -782,7 +782,7 @@ body {
 
 @media (min-width: 1330px) {
   .container {
-    width: 1300px;
+    /* width: 1300px; */
   }
 }
 
