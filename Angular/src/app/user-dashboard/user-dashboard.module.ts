@@ -40,6 +40,7 @@ import { RouterModule } from '@angular/router';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FooterComponentComponent } from '../home-component/footer-component/footer-component.component';
 
+import { MatTableModule } from '@angular/material/table';
 
 
 @NgModule({
@@ -79,7 +80,8 @@ import { FooterComponentComponent } from '../home-component/footer-component/foo
     MatMenuModule,
     MatCheckboxModule,
     MatFormFieldModule,
-    CommonModule
+    CommonModule,
+    MatTableModule
   ],
 
   exports:[
