@@ -1,11 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-figurecard',
+  selector: 'lender-app-figurecard',
   templateUrl: './figurecard.component.html',
   styleUrls: ['./figurecard.component.scss']
 })
-export class FigurecardComponent implements OnInit {
+export class LenderFigurecardComponent implements OnInit {
   @Input() headerIcon: string;
   @Input() category: string;
   @Input() title: string;

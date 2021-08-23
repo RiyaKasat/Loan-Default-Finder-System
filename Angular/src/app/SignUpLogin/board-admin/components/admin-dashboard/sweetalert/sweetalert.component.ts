@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 declare const swal: any;
 
 @Component({
-  selector: 'app-sweetalert',
+  selector: 'admin-app-sweetalert',
   templateUrl: './sweetalert.component.html',
   styleUrls: ['./sweetalert.component.scss']
 })
-export class SweetAlertComponent implements OnInit {
+export class AdminSweetAlertComponent implements OnInit {
 
   constructor() { }
 

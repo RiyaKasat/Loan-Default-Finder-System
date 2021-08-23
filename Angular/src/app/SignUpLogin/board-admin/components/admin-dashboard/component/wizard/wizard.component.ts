@@ -2,11 +2,11 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 declare const $: any;
 
 @Component({
-  selector: 'app-wizard',
+  selector: 'admin-app-wizard',
   templateUrl: './wizard.component.html',
   styleUrls: ['./wizard.component.scss']
 })
-export class WizardComponent implements OnInit, AfterViewInit {
+export class AdminWizardComponent implements OnInit, AfterViewInit {
   tabIndex = 0;
   constructor() { }
 

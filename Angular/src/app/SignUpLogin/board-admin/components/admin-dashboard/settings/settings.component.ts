@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { SettingsService } from '../../services/settings.service';
 
 @Component({
-  selector: 'app-settings',
+  selector: 'admin-app-settings',
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.scss']
 })
-export class SettingsComponent implements OnInit {
+export class AdminSettingsComponent implements OnInit {
 
   constructor(public settingService: SettingsService) { }
 

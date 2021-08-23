@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-lock',
+  selector: 'lender-app-lock',
   templateUrl: './lock.component.html',
   styleUrls: ['./lock.component.scss']
 })
-export class LockComponent implements OnInit {
+export class LenderLockComponent implements OnInit {
 
   constructor() { }
 

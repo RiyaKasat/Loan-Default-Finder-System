@@ -3,11 +3,11 @@ import { SettingsService } from '../services/settings.service';
 import { ROUTES } from './sidebar-routes.config';
 
 @Component({
-  selector: 'app-sidebar',
+  selector: 'lender-app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss']
 })
-export class SidebarComponent implements OnInit, AfterViewInit, OnDestroy {
+export class LenderSidebarComponent implements OnInit, AfterViewInit, OnDestroy {
   public color: string;
   public menuItems: any[];
   public activeFontColor: string;

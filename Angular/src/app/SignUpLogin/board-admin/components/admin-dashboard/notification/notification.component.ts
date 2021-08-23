@@ -2,11 +2,11 @@ import {Component, OnInit} from '@angular/core';
 declare const $: any;
 
 @Component({
-  selector: 'app-notification',
+  selector: 'admin-app-notification',
   templateUrl: './notification.component.html',
   styleUrls: ['./notification.component.scss']
 })
-export class NotificationComponent implements OnInit {
+export class AdminNotificationComponent implements OnInit {
 
   constructor() {
   }
