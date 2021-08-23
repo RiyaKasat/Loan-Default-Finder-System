@@ -26,6 +26,7 @@ import { SignUpLoginComponent } from './SignUpLogin/login/login.component';
 import { LoginProfileComponent } from './SignUpLogin/profile/profile.component';
 import { LoginRegisterComponent } from './SignUpLogin/register/register.component';
 import { FormIComponent } from './Forms/form-i/form-i.component';
+import { AdminAddOfferComponent } from './Forms/admin-add-offer/admin-add-offer.component';
 
 
 const Approutes: Routes = [
@@ -73,6 +74,9 @@ const Approutes: Routes = [
   {
     path:'bankdetails',
     component: FormIComponent
+  },
+  {
+    path:'adminoffer',component:AdminAddOfferComponent
   },
 
 

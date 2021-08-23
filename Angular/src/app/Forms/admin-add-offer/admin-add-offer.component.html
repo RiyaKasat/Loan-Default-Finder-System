@@ -1,0 +1,104 @@
+<div class="register-form col-md-6 ml-5 mr-5  ">
+    <h2>Admin Page For Adding Offers</h2>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group ">
+        <label>Offer Details</label>
+        <input
+          type="text"
+          formControlName="offer_details"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.offer_details.errors }"
+        />
+        <div *ngIf="submitted && f.offer_details.errors" class="invalid-feedback">
+          <div *ngIf="f.offer_details.errors.required">Offer Details is required</div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label>Tenure</label>
+        <input
+          type="number"
+          formControlName="tenure"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.tenure.errors }"
+        />
+        <div *ngIf="submitted && f.tenure.errors" class="invalid-feedback">
+          <div *ngIf="f.tenure.errors.required">Tenure is required</div>
+         
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label>Interest Rate</label>
+        <input
+          type="number"
+          formControlName="interest_rate"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.interest_rate.errors }"
+        />
+        <div *ngIf="submitted && f.interest_rate.errors" class="invalid-feedback">
+          <div *ngIf="f.interest_rate.errors.required">Interest Rate is required</div>
+         
+        </div>
+      </div>
+  
+      
+      <div class="form-group">
+        <label>Lender's Email</label>
+        <input
+          type="text"
+          formControlName="email"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+        />
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+          <div *ngIf="f.email.errors.required">Email is required</div>
+          <div *ngIf="f.email.errors.email">Email is invalid</div>
+        </div>
+      </div>
+  
+      
+      
+      <div class="form-group">
+        <label>Lender's Name</label>
+        <input
+          type="text"
+          formControlName="lender_name"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.lender_name.errors }"
+        />
+        <div *ngIf="submitted && f.lender_name.errors" class="invalid-feedback">
+          <div *ngIf="f.lender_name.errors.required">Lender Name is required</div>
+        </div>
+      </div>
+  
+  
+  
+      <div class="form-group form-check">
+        <input
+          type="checkbox"
+          formControlName="acceptTerms"
+          class="form-check-input"
+          [ngClass]="{ 'is-invalid': submitted && f.acceptTerms.errors }"
+        />
+        <label for="acceptTerms" class="form-check-label"
+          >Submit the offer</label
+        >
+        <div *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback">
+          Check offer details before adding.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Add</button>
+        <button
+          type="button"
+          (click)="onReset()"
+          class="btn btn-warning float-right"
+        >
+          Reset
+        </button>
+      </div>
+    </form>
+  </div>
+  

@@ -25,6 +25,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import {NgxMatIntlTelInputModule} from 'ngx-mat-intl-tel-input';
 import { FormIComponent } from './form-i/form-i.component';
+import { AdminAddOfferComponent } from './admin-add-offer/admin-add-offer.component';
 
 
 
@@ -39,6 +40,8 @@ import { FormIComponent } from './form-i/form-i.component';
     ContactUsFormComponent,
     EnquiryFormComponent,
     FormIComponent,
+    AdminAddOfferComponent
+
 
   ],
   imports: [
@@ -57,7 +60,7 @@ import { FormIComponent } from './form-i/form-i.component';
     FileUploadModule,
     MatIconModule,
     NgxIntlTelInputModule,
-    NgxMatIntlTelInputModule
+    NgxMatIntlTelInputModule,
   ],
   exports:
   [
