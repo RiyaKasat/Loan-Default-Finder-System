@@ -19,12 +19,13 @@ import { LoginComponent } from './user-dashboard/page/login/login.component';
 import { RegisterComponent } from './user-dashboard/page/register/register.component';
 import { FormsComponent } from './Forms/forms/forms.component';
 import { BoardAdminComponent } from './SignUpLogin/board-admin/board-admin.component';
-import { BoardModeratorComponent } from './SignUpLogin/lender-board/lender-board';
+import {  LenderBoardComponent } from './SignUpLogin/lender-board/lender-board.component';
 import { BoardUserComponent } from './SignUpLogin/board-user/board-user.component';
 import { LoginHomeComponent } from './SignUpLogin/home/home.component';
 import { SignUpLoginComponent } from './SignUpLogin/login/login.component';
 import { LoginProfileComponent } from './SignUpLogin/profile/profile.component';
 import { LoginRegisterComponent } from './SignUpLogin/register/register.component';
+import { FormIComponent } from './Forms/form-i/form-i.component';
 
 
 const Approutes: Routes = [
@@ -49,6 +50,7 @@ const Approutes: Routes = [
     path: 'loancalculator',
     component: CalculatorLoanComponent
   },
+  
 
   {path: 'd', component: LoginComponent},
   {path: 'lock', component: LockComponent},
@@ -68,19 +70,22 @@ const Approutes: Routes = [
   ]},
 
   { path: 'applicationform', component: FormsComponent },
+  {
+    path:'bankdetails',
+    component: FormIComponent
+  },
 
 
 
 
-
-   { path: 'home', component: LoginHomeComponent },
+  { path: 'home', component: LoginHomeComponent },
   { path: 'login', component: SignUpLoginComponent },
   { path: 'register', component: LoginRegisterComponent },
   { path: 'profile', component: LoginProfileComponent },
 
   
   { path: 'user', component: BoardUserComponent },
-  { path: 'mod', component: BoardModeratorComponent },
+  { path: 'mod', component: LenderBoardComponent },
   { path: 'admin', component: BoardAdminComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];

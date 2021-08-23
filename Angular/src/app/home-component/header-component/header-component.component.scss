@@ -1,0 +1,47 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+nav {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+  
+  .left *{
+    color: #fff;
+  }
+  
+  .right{
+    display: flex;
+  }
+  
+  .right a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: rgb(41, 21, 21);
+    cursor: pointer;
+    margin-right: 25px;
+  }
+  
+  .right p{
+    margin-left: 5px;
+    font-size: 12px;
+    margin-top: 3px;
+    line-height: normal;
+    color: rgb(24, 13, 13);
+  }
+  
+  .right i{
+    font-size: 20px;
+  }
+  
+  .router-active{
+    background-color: rgba(119, 109, 109, 0.1);
+    padding: 15px 18px 15px 15px;
+    border-radius: 3px;
+  }
+  

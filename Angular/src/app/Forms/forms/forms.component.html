@@ -9,18 +9,14 @@
       <span [style.color]="'#5A5A5A'" class="view-archive"> Add Component</span>
     </div>
   </div>
-
-  <div style="overflow: hidden;position: absolute;top:0;right: 0;z-index: 2"  >
-    <img src="../../../assets/images/Tangram_top.svg" style="margin-top: -150px;z-index: 2;margin-right: -260px;" />
-  </div>
 </div>
 
 
 <h3 class="admin-heading componentHeading">
   <mat-icon (click)="goToPreviousPage()" >arrow_back</mat-icon>Loan Application
 </h3>
+
 <div class="container">
-  
   <div class="row">
 
 
@@ -38,7 +34,7 @@
 
         <mat-form-field class="full-width">
        
-          <input matInput [matDatepicker]="picker" placeholder="Your birthday" formControlName="birthday" required>
+          <input matInput [matDatepicker]="picker" placeholder="Date of Birth" formControlName="birthday" required>
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
           <mat-error *ngFor="let validation of validation_messages.birthday">
@@ -65,19 +61,33 @@
           </mat-error>
         </mat-form-field>
 
-<!-- 
         <mat-form-field class="full-width">
-          <input matInput placeholder="Loan Amount" formControlName="loanamount" required>
-          <mat-error *ngFor="let validation of validation_messages.loanamount">
-            <mat-error class="error-message" *ngIf="userDetailsForm.get('loanamount').hasError(validation.type) && (userDetailsForm.get('loanamount').dirty || userDetailsForm.get('loanamount').touched)">{{validation.message}}</mat-error>
+          <input matInput placeholder="Address" formControlName="address" required>
+          <mat-error *ngFor="let validation of validation_messages.address">
+            <mat-error class="error-message" *ngIf="userDetailsForm.get('address').hasError(validation.type) && (userDetailsForm.get('address').dirty || userDetailsForm.get('address').touched)">{{validation.message}}</mat-error>
           </mat-error>
-        </mat-form-field> -->
+        </mat-form-field>
 
+        <mat-form-field class="full-width">
+            <input matInput placeholder="State" formControlName="state" required>
+            <mat-error *ngFor="let validation of validation_messages.state">
+              <mat-error class="error-message" *ngIf="userDetailsForm.get('state').hasError(validation.type) && (userDetailsForm.get('state').dirty || userDetailsForm.get('state').touched)">{{validation.message}}</mat-error>
+            </mat-error>
+          </mat-form-field>
 
-        <!-- <mat-form-field class="full-width">
-          <input  placeholder="Loan Amount" formControlName="loanamount" required>
-        </mat-form-field> -->
+          <mat-form-field class="full-width">
+              <input matInput placeholder="City" formControlName="city" required>
+              <mat-error *ngFor="let validation of validation_messages.city">
+                <mat-error class="error-message" *ngIf="userDetailsForm.get('city').hasError(validation.type) && (userDetailsForm.get('city').dirty || userDetailsForm.get('city').touched)">{{validation.message}}</mat-error>
+              </mat-error>
+            </mat-form-field>
 
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Pincode" formControlName="pincode" required>
+            <mat-error *ngFor="let validation of validation_messages.pincode">
+              <mat-error class="error-message" *ngIf="userDetailsForm.get('pincode').hasError(validation.type) && (userDetailsForm.get('pincode').dirty || userDetailsForm.get('pincode').touched)">{{validation.message}}</mat-error>
+            </mat-error>
+          </mat-form-field>
 
         <div formGroupName="country_phone" class="row">
        
@@ -92,17 +102,11 @@
           <mat-hint>eg : {{phone.selectedCountry.placeHolder}}</mat-hint>
         </mat-form-field> 
         </div>
-
-     
-       
-
       </form>
     </div>
 
 
     <div class="col">
-     
-
       <form [formGroup]="accountDetailsForm" novalidate (ngSubmit)="onSubmitAccountDetails(accountDetailsForm.value)">
 
         <mat-form-field class="full-width">
@@ -112,23 +116,71 @@
           </mat-error>
         </mat-form-field>
 
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Company Name" formControlName="companyName" required>
+          <mat-error *ngFor="let validation of account_validation_messages.companyName">
+            <mat-error class="error-message" *ngIf="accountDetailsForm.get('companyName').hasError(validation.type) && (accountDetailsForm.get('companyName').dirty || accountDetailsForm.get('companyName').touched)">{{validation.message}}</mat-error>
+          </mat-error>
+        </mat-form-field><br>
 
-        <div formGroupName="matching_passwords">
-          <mat-form-field class="full-width">
-            <input matInput type="password" placeholder="Password" formControlName="password" required>
-            <mat-error *ngFor="let validation of account_validation_messages.password">
-              <mat-error class="error-message" *ngIf="accountDetailsForm.get('matching_passwords').get('password').hasError(validation.type) && (accountDetailsForm.get('matching_passwords').get('password').dirty || accountDetailsForm.get('matching_passwords').get('password').touched)">{{validation.message}}</mat-error>
+        <mat-form-field class="full-width">
+          <mat-select matInput placeholder="Business Premise" formControlName="businessPremise" required>
+            <mat-option value="A">Self Employed</mat-option>
+            <mat-option value="B">Salaried</mat-option>
+            </mat-select>
+          <mat-error *ngFor="let validation of account_validation_messages.businessPremise">
+            <mat-error class="error-message" *ngIf="accountDetailsForm.get('businessPremise').hasError(validation.type) && (accountDetailsForm.get('businessPremise').dirty || accountDetailsForm.get('businessPremise').touched)">{{validation.message}}</mat-error>
+          </mat-error>
+        </mat-form-field><br>
+
+        <mat-form-field class="full-width">
+          <input matInput placeholder="PAN" formControlName="pan" required>
+          <mat-error *ngFor="let validation of account_validation_messages.pan">
+            <mat-error class="error-message" *ngIf="accountDetailsForm.get('pan').hasError(validation.type) && (accountDetailsForm.get('pan').dirty || accountDetailsForm.get('pan').touched)">{{validation.message}}</mat-error>
+          </mat-error>
+        </mat-form-field><br>
+
+        <mat-form-field class="full-width">
+            <mat-select matInput placeholder="Sales Last Year" formControlName="lastYearSales" required>
+              <mat-option value="A">0-50 Lacs</mat-option>
+              <mat-option value="B">50 Lacs to 5 Crores</mat-option>
+              <mat-option value="B">5 Crores to 20 Crores</mat-option>
+              <mat-option value="B">More than 20 Crores</mat-option>
+              </mat-select>
+            <mat-error *ngFor="let validation of account_validation_messages.lastYearSales">
+              <mat-error class="error-message" *ngIf="accountDetailsForm.get('lastYearSales').hasError(validation.type) && (accountDetailsForm.get('lastYearSales').dirty || accountDetailsForm.get('lastYearSales').touched)">{{validation.message}}</mat-error>
             </mat-error>
-          </mat-form-field>
+          </mat-form-field><br>
 
           <mat-form-field class="full-width">
-            <input matInput type="password" placeholder="Confirm Password" formControlName="confirm_password"  [errorStateMatcher]="parentErrorStateMatcher" required>
-            <mat-error *ngFor="let validation of account_validation_messages.confirm_password">
-              <mat-error class="error-message" *ngIf="(accountDetailsForm.get('matching_passwords').get('confirm_password').hasError(validation.type)|| accountDetailsForm.get('matching_passwords').hasError(validation.type)) && (accountDetailsForm.get('matching_passwords').get('confirm_password').dirty || accountDetailsForm.get('matching_passwords').get('confirm_password').touched)">{{validation.message}}</mat-error>
-            </mat-error>
-          </mat-form-field>
+              <mat-select matInput placeholder="Established since last" formControlName="establishedYears" required>
+                <mat-option value="A">1 Year</mat-option>
+                <mat-option value="B">3 Years</mat-option>
+                <mat-option value="B">7 Years</mat-option>
+                <mat-option value="B">More than 10 Years</mat-option>
+                </mat-select>
+              <mat-error *ngFor="let validation of account_validation_messages.establishedYears">
+                <mat-error class="error-message" *ngIf="accountDetailsForm.get('establishedYears').hasError(validation.type) && (accountDetailsForm.get('establishedYears').dirty || accountDetailsForm.get('establishedYears').touched)">{{validation.message}}</mat-error>
+              </mat-error>
+            </mat-form-field><br>
 
-        </div>
+            <mat-form-field class="full-width">
+                <mat-select matInput placeholder="Business Type" formControlName="businessType" required>
+                  <mat-option value="A">Trading</mat-option>
+                  <mat-option value="B">Manufacturing</mat-option>
+                  <mat-option value="B">Service</mat-option>
+                  </mat-select>
+                <mat-error *ngFor="let validation of account_validation_messages.businessType">
+                  <mat-error class="error-message" *ngIf="accountDetailsForm.get('businessType').hasError(validation.type) && (accountDetailsForm.get('businessType').dirty || accountDetailsForm.get('businessType').touched)">{{validation.message}}</mat-error>
+                </mat-error>
+              </mat-form-field><br>
+
+              <mat-form-field class="full-width">
+                  <input matInput placeholder="Loan Repayment Account Number" formControlName="repaymentAccNo" required>
+                  <mat-error *ngFor="let validation of account_validation_messages.repaymentAccNo">
+                    <mat-error class="error-message" *ngIf="accountDetailsForm.get('repaymentAccNo').hasError(validation.type) && (accountDetailsForm.get('repaymentAccNo').dirty || accountDetailsForm.get('repaymentAccNo').touched)">{{validation.message}}</mat-error>
+                  </mat-error>
+                </mat-form-field><br>
 
         <mat-checkbox formControlName="terms">
           I accept terms and conditions
@@ -137,73 +189,15 @@
           <mat-error class="error-message" *ngIf="accountDetailsForm.get('terms').hasError(validation.type) && (accountDetailsForm.get('terms').dirty || accountDetailsForm.get('terms').touched)">{{validation.message}}</mat-error>
         </mat-error>
 
-        <button class="submit-btn" color="primary" mat-raised-button type="submit" [disabled]="!accountDetailsForm.valid && !userDetailsForm.valid">
-          Submit
-        </button>
-
       </form>
-
+      <!-- <button (click)="next()" class="btn btn-primary">Proceed</button> -->
+      </div>
+      <button class="submit-btn" color="primary" mat-raised-button type="submit" (click)="goformi();" [disabled]="!accountDetailsForm.valid && !userDetailsForm.valid">
+        Proceed
+      </button>
     </div>
-  </div>
+
+        <!-- <mat-label>Bank Statement of Last 6 months *</mat-label>
+        <app-file-upload></app-file-upload> -->
+       
 </div>
-
-
-
-<app-file-upload></app-file-upload>
-<!-- 
-<div class="form-container">
-  <form [formGroup]="nodeMailerForm">
-    <mat-form-field appearance="fill">
-      <mat-label>Enter the email id you wish to send mail to:</mat-label>
-      <input matInput #email placeholder="provide email id here" formControlName="email" type="email">
-    </mat-form-field>
-    <br>
- <button  mat-raised-button color="accent" type="submit" (click)="sendMail()">Click Me</button>
-</form>
-</div> -->
-
-
-
-
-<div class="container">
-  <div class="row">
-    <div class="col-6 mx-auto mt-5 p-3 bg-light border border-info">
-      <form [formGroup]="infoForm" (ngSubmit)="sendMail()" #form="ngForm">
-        <label for="nameInp"></label>
-        <input type="text" id="nameInp" class="form-control border-info" formControlName="name">
-
-        <div *ngIf="name.invalid && (name.dirty || name.touched)"
-             class="alert alert-danger p-1">
-
-          <p *ngIf="name.errors.required" class="mb-0">
-            Name is required.
-          </p>
-          <p *ngIf="name.errors.minlength" class="mb-0">
-            Name must be at least 3 characters long.
-          </p>
-        </div>
-
-        <label for="mailInp"></label>
-        <input type="text" id="mailInp" class="form-control border-info" formControlName="email">
-
-        <div *ngIf="email.invalid && (email.dirty || email.touched)"
-             class="alert alert-danger p-1">
-
-          <p *ngIf="email.errors.required" class="mb-0">
-            Email is required.
-          </p>
-          <p *ngIf="email.errors.email" class="mb-0">
-            Email is incorrect.
-          </p>
-        </div>
-
-        <div class="text-right mt-3">
-          <button class="btn btn-info" [disabled]="form.invalid">Send</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-
-
-<app-contact-us-form></app-contact-us-form>

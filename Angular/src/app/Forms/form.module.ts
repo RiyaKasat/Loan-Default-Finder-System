@@ -24,6 +24,7 @@ import { SendEmailService } from '../send-email.service';
 import {MatIconModule} from '@angular/material/icon';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import {NgxMatIntlTelInputModule} from 'ngx-mat-intl-tel-input';
+import { FormIComponent } from './form-i/form-i.component';
 
 
 
@@ -37,6 +38,7 @@ import {NgxMatIntlTelInputModule} from 'ngx-mat-intl-tel-input';
     FormsMainComponent,
     ContactUsFormComponent,
     EnquiryFormComponent,
+    FormIComponent,
 
   ],
   imports: [
