@@ -1,11 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-msgiconbtn',
+  selector: 'admin-app-msgiconbtn',
   templateUrl: './msgiconbtn.component.html',
   styleUrls: ['./msgiconbtn.component.scss']
 })
-export class MsgIconBtnComponent implements OnInit {
+export class AdminMsgIconBtnComponent implements OnInit {
   @Input() number: string;
   @Input() icon: string;
   constructor() { }

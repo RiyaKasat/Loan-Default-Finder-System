@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-lock',
+  selector: 'admin-app-lock',
   templateUrl: './lock.component.html',
   styleUrls: ['./lock.component.scss']
 })
-export class LockComponent implements OnInit {
+export class AdminLockComponent implements OnInit {
 
   constructor() { }
 

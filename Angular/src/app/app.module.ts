@@ -67,7 +67,7 @@ import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { GridModule } from '@syncfusion/ej2-angular-grids';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { SignuploginModule } from './SignUpLogin/signuplogin.module';
-import { LenderDashboardComponent } from './lender-dashboard/lender-dashboard.component';
+
 
 // import { RegisterComponent } from './SignUpLogin/register/register.component';
 // import { ProfileComponent } from './SignUpLogin/profile/profile.component';
@@ -107,8 +107,7 @@ import { LenderDashboardComponent } from './lender-dashboard/lender-dashboard.co
     BarChartComponent,
     GridAppComponent,
     routingComponents,
-    LenderDashboardComponent,
-   
+    FooterComponentComponent
     // RegisterComponent,
     // ProfileComponent,
     // BoardAdminComponent,
@@ -173,6 +172,9 @@ import { LenderDashboardComponent } from './lender-dashboard/lender-dashboard.co
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
     })
+  ],
+  exports:[
+    FooterComponentComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [HttpClient, DataService, SendEmailService],

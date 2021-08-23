@@ -53,6 +53,16 @@ const routes: Routes = [
 
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    exports: [HomeComponentComponent, RouterModule, CardComponent, DiscoverComponent],
+    exports: [ RouterModule, CardComponent, DiscoverComponent,    HomeComponentComponent,
+
+        HeaderComponentComponent,
+        FooterComponentComponent,
+        ScrollToTopComponent,
+        CardComponent,
+        
+        DiscoverComponent,
+                  KnowYourSectionComponent,
+                  HowItworksComponent,
+                  ClientFeedbackComponent]
 })
 export class HomeModule { }

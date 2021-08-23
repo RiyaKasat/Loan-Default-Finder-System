@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-pricetable',
+  selector: 'lender-app-pricetable',
   templateUrl: './pricetable.component.html',
   styleUrls: ['./pricetable.component.scss']
 })
-export class PriceTableComponent implements OnInit {
+export class LenderPriceTableComponent implements OnInit {
 
   constructor() { }
 

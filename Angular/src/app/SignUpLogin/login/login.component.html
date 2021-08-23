@@ -17,26 +17,30 @@
          </div>
          <p class="tip"></p>
          <div class="card-form">
-           <div class="form-row">
-           </div>
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+           <!-- <div class="form-row">
+           </div> -->
            <div class="form-row">
              <i class="material-icons">email</i>
              <mat-form-field color="accent">
-               <input type="text" matInput placeholder="Email address"/>
+               <input type="text" matInput placeholder="Email address" formControlName="email"/>
              </mat-form-field>
            </div>
            <div class="form-row">
              <i class="material-icons">lock_outline</i>
              <mat-form-field color="accent">
-               <input type="password" matInput placeholder="Password"/>
+               <input type="password" matInput placeholder="Password" formControlName="password"/>
              </mat-form-field>
            </div>
-         </div>
+           </form>
+        
+       </div>
          <!-- <div class="card-footer">
-           <button mat-button (click)="loginBtn()">LET'S GO</button>
+           <button mat-button (click)="onSubmit()">LET'S GO</button>
          </div> -->
        </div>
+
      </div>
    </div>
   </div>
-</div>
+

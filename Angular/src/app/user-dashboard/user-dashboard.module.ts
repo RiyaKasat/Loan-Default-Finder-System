@@ -38,6 +38,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
 import { RouterModule } from '@angular/router';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { FooterComponentComponent } from '../home-component/footer-component/footer-component.component';
 
 
 
@@ -64,7 +65,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     PriceTableComponent,
     PanelsComponent,
     WizardComponent,
-    UserDashboardComponent
+    UserDashboardComponent,
+   
   ],
   imports: [
     BrowserModule,

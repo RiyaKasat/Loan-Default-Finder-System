@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../_services/auth.service';
 import { TokenStorageService } from '../_services/token-storage.service';
@@ -11,6 +11,8 @@ import { TokenStorageService } from '../_services/token-storage.service';
   styleUrls: ['./login.component.scss']
 })
 export class SignUpLoginComponent implements OnInit {
+  
+  loginForm: FormGroup;
   form: any = {
     email: null,
     password: null
@@ -22,16 +24,26 @@ export class SignUpLoginComponent implements OnInit {
   roles: string[] = [];
 
   constructor(private authService: AuthService, private tokenStorage: TokenStorageService,
-    private router: Router) { }
+    private router: Router, private fb: FormBuilder) { }
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
       this.isLoggedIn = true;
       this.roles = this.tokenStorage.getUser().roles;
     }
+
+    this.createForms();
   }
+  createForms() {
+    this.loginForm = this.fb.group({
+      email: '',
+      password: ''
+      
+  })
+}
 
 
+  
 
   account_validation_messages={
     'email': [
@@ -43,7 +55,7 @@ export class SignUpLoginComponent implements OnInit {
 
 
   onSubmit(): void {
-    const { email, password } = this.form;
+    const { email, password } = this.loginForm.value;
 
     this.authService.login(email, password).subscribe(
       data => {
