@@ -36,6 +36,10 @@ export class SignUpLoginComponent implements OnInit {
   }
 
 
+
+
+
+  
   createForms() {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]],
@@ -46,17 +50,13 @@ export class SignUpLoginComponent implements OnInit {
       ])]
     });
 
-  //   this.loginForm = this.fb.group({
-  //     email: '',
-  //     password: ''
-      
-  // })
+  
 }
 
 
   
 
-  account_validation_messages={
+  validation_messages={
     'email': [
     { type: 'required', message: 'Email is required' },
     { type: 'pattern', message: 'Enter a valid email' }

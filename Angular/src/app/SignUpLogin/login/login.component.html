@@ -24,6 +24,9 @@
              <i class="material-icons">email</i>
              <mat-form-field color="accent">
                <input type="text" matInput placeholder="Email address" formControlName="email"/>
+               <mat-error *ngFor="let validation of validation_messages.email">
+                <mat-error class="error-message" *ngIf="loginForm.get('email').hasError(validation.type) && (loginForm.get('email').dirty || loginForm.get('email').touched)">{{validation.message}}</mat-error>
+              </mat-error>
              </mat-form-field>
            </div>
            <div class="form-row">
