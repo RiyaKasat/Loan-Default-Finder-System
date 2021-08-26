@@ -21,28 +21,6 @@ app.use(bodyParser.json())
 
 
 //db connection
-var connection = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password:"Riya123456789",
-    database:"loanSystem",
-    port:"3306"
-})
-
-
-
-connection.connect((err) =>
-{
-    if(err){
-        throw err
-    }
-    else{
-        console.log("connected")
-        
-    }
-
-})
-
 // connection.query(`select * from loansystem.persons`, function (err, result, fields) {
 //   if (err) throw err;
 //   console.log(result);
@@ -113,13 +91,7 @@ app.get('/data', function(req, res)
 
 
 
-app.get('/user-list', function(req, res, next) {
-  var sql='SELECT * FROM loanSystem.lender_offerings';
-  db.query(sql, function (err, data, fields) {
-  if (err) throw err;
-  res.render('user-list', { title: 'User List', userData: data});
-});
-});
+
 module.exports = router;
 
 
