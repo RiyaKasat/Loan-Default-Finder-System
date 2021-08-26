@@ -75,6 +75,7 @@ import { AdminHeaderComponent } from './board-admin/Components/admin-shared/head
 import { AdminImagecardComponent } from './board-admin/Components/admin-shared/imagecard/imagecard.component';
 import { AdminMsgIconBtnComponent } from './board-admin/Components/admin-shared/msgiconbtn/msgiconbtn.component';
 import { AdminNavbarComponent } from './board-admin/Components/admin-shared/navbar/navbar.component';
+import { AdminSettingsService } from './board-admin/Components/admin-services/settings.service';
 
 
 @NgModule({
@@ -110,7 +111,7 @@ import { AdminNavbarComponent } from './board-admin/Components/admin-shared/navb
      LenderBoardComponent,
      UserProfileComponent,
 
-
+ 
      AdminPanelsComponent,
      AdminPriceTableComponent,
      AdminWizardComponent,
@@ -225,7 +226,7 @@ import { AdminNavbarComponent } from './board-admin/Components/admin-shared/navb
     
 
   ],
-  providers: [authInterceptorProviders, LenderSettingsService],
+  providers: [authInterceptorProviders, LenderSettingsService, AdminSettingsService],
   bootstrap: [SignuploginModule]
 })
 export class SignuploginModule { }

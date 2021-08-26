@@ -1,5 +1,16 @@
-<div class="container">
+<!-- <div class="container">
     <header class="jumbotron">
       <p>{{ content }}</p>
     </header>
+  </div> -->
+
+  <div class="wrapper">
+    <div class="sidebar-panel" id="sidebar" [style.background-color]="backgroundColor">
+  
+      <div class="sidebar-background" [style.background-image]="'url(../assets/img/sidebar-' + id + '.jpg)'"></div>
+      <admin-app-sidebar></admin-app-sidebar>
+    </div>
+    <div class="main-panel" id="main-panel">
+      <router-outlet></router-outlet>
+    </div>
   </div>
