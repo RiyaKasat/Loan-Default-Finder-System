@@ -67,8 +67,7 @@ import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { GridModule } from '@syncfusion/ej2-angular-grids';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { SignuploginModule } from './SignUpLogin/signuplogin.module';
-import { SlideMenuModule } from 'cuppa-ng2-slidemenu/cuppa-ng2-slidemenu';
-
+import { NgxPaginationModule } from 'ngx-pagination';
 // import { RegisterComponent } from './SignUpLogin/register/register.component';
 // import { ProfileComponent } from './SignUpLogin/profile/profile.component';
 // import { BoardAdminComponent } from './SignUpLogin/board-admin/board-admin.component';
@@ -162,8 +161,8 @@ import { SlideMenuModule } from 'cuppa-ng2-slidemenu/cuppa-ng2-slidemenu';
     FormModule,
     FileUploadModule ,
     NgxIntlTelInputModule,
-    SlideMenuModule,
     NgbProgressbarModule,
+    NgxPaginationModule,
 
     SignuploginModule,
     ServiceWorkerModule.register('ngsw-worker.js', {

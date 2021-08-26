@@ -33,6 +33,9 @@
              <i class="material-icons">lock_outline</i>
              <mat-form-field color="accent">
                <input type="password" matInput placeholder="Password" formControlName="password"/>
+               <mat-error *ngFor="let validation of validation_messages.password">
+                <mat-error class="error-message" *ngIf="loginForm.get('password').hasError(validation.type) && (loginForm.get('password').dirty || loginForm.get('password').touched)">{{validation.message}}</mat-error>
+              </mat-error>
              </mat-form-field>
            </div>
            </form>

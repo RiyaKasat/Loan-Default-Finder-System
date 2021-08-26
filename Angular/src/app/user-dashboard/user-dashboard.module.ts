@@ -13,7 +13,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { PanelsComponent } from './dashboard/component/panels/panels.component';
 import { PriceTableComponent } from './dashboard/component/pricetable/pricetable.component';
 import { WizardComponent } from './dashboard/component/wizard/wizard.component';
@@ -41,6 +40,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FooterComponentComponent } from '../home-component/footer-component/footer-component.component';
 
 import { MatTableModule } from '@angular/material/table';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -81,7 +81,8 @@ import { MatTableModule } from '@angular/material/table';
     MatCheckboxModule,
     MatFormFieldModule,
     CommonModule,
-    MatTableModule
+    MatTableModule,
+    HttpClientModule
   ],
 
   exports:[
