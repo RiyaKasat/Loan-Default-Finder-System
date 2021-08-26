@@ -10,7 +10,7 @@ const nodemailer=require('nodemailer');
 const SMTPTransport = require('nodemailer/lib/smtp-transport');
 
 const db = require("./models");
-
+const logger = require('./Middleware/logger')
 
 
 const bodyParser=require('body-parser');
@@ -19,6 +19,59 @@ const bodyParser=require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
 
+
+//db connection
+var connection = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password:"rootpassword",
+    database:"loansystem",
+    port:"3306"
+})
+
+
+
+connection.connect((err) =>
+{
+    if(err){
+      logger.error('mysql connection failed:',err);
+        throw err
+    }
+    else{
+      logger.info('mysql connection established');
+        console.log("connected");
+        
+    }
+
+})
+
+connection.query(`select * from loansystem.lending_offers`, function (err, result, fields) {
+  if (err) throw err;
+  // logger.error('Query error:',err);
+  console.log(result);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// connection.query(`select * from loanSystem.lender_offerings`,(err,res)=>{
+    
+//   return console.log(res);
+// })
 
 
 
@@ -57,6 +110,13 @@ app.use(cors(corsOptions));
 
 
 
+app.get('/user-list', function(req, res, next) {
+  var sql='SELECT * FROM loansystem.lender_offerings';
+  db.query(sql, function (err, data, fields) {
+  if (err) throw err;
+  res.render('user-list', { title: 'User List', userData: data});
+});
+});
 module.exports = router;
 
 
