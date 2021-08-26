@@ -272,5 +272,28 @@ app.listen(port, () => {
 
 
 
+const webpush=require('web-push');
+console.log(webpush.generateVAPIDKeys());
 
+const publicKey   ='BI3dClbcrugOLd9kDw3P33ZoUCfJsPvUPumjmhenvbDknu6wX4W_an0YoNT5aOWiVf4ASHaWsk6fwfkNlHGnnO0';
+const privateKey  ='gOoe2TqfHD5n4ykLzPD8xgk_mI50bQAJLE8cbe3Syt4';
+
+const sub = {
+  endpoint:
+    'https://fcm.googleapis.com/fcm/send/cWcv1sS0Ea8:APA91bE04rsxL3C9OR7VDT8iNNy1wnkLUhfdjhfdfhjGq3qlJX-DYkE7Gm9IYAhHVKdqEpkxjoO1ZY75ljclawWW9VtfWt9M56rfkBUPD25egHoRCWPf3yBD8daER71PayRM4mzPi30w',
+  expirationTime: null,
+  keys: {
+    p256dh:
+      'BDo85DDt4k4XrNhlEQG6qaJkYuWewm7kLNk8LZ7fdkfjdk-CUeGvrQGvZorJuS96X-U1P9J7Tn3uBxNNtsdgY0',
+    auth: 'x3Q6AeNsZyfjdkf7lkTQRQ',
+  },
+};
+
+const payLoad = {
+  notification: {
+    data: { url: 'http://www.youtube.com/funofheuristic' },
+    title: 'Fun Of Heuristic',
+    vibrate: [100, 50, 100],
+  },
+};
 

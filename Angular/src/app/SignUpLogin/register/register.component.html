@@ -111,12 +111,7 @@
                     <a mat-mini-fab style="background-color: #3b5998;"><i class="fa fa-facebook"></i></a>
                   </div>
                   <!-- <h6 style="margin-bottom: 30px">or be classical</h6> -->
-                  <form
-                  *ngIf="!isSuccessful"
-                  name="form"
-                  (ngSubmit)="f.form.valid && onSubmit()"
-                  #f="ngForm"
-                  novalidate>
+                  <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
                   <div class="row">
                     <i class="material-icons">face</i>
                     <mat-form-field color="accent">
@@ -149,6 +144,7 @@
                       [(ngModel)]="form.password"
                       required
                       minlength="6"
+                      maxlength="15"
                       #password="ngModel" matInput placeholder="Password">
                     </mat-form-field>
                   </div>
@@ -158,14 +154,19 @@
                     <div *ngIf="password.errors.minlength">
                       Password must be at least 6 characters
                     </div>
+                    <div *ngIf="password.errors.maxlength">
+                      Password must not be greater than 15 characters
+                    </div>
+
+
                   </div>
                 
                   <div class="row">
-                    <mat-checkbox style="margin-left: 2px" aria-required="required"><p style="margin-left: 8px">I agree to the <span style="color: #9c27b0; cursor: pointer; font-weight: 400;">terms and conditions</span>.</p></mat-checkbox>
+                    <mat-checkbox style="margin-left: 2px" ><p style="margin-left: 8px">I agree to the <span style="color: #9c27b0; cursor: pointer; font-weight: 400;">terms and conditions</span>.</p></mat-checkbox>
                   </div>
                   <div class="form-group">
                   <div class="row" style="display: flex; justify-content: center">
-                    <button mat-raised-button class="btn btn-primary btn-round">GET STARTED</button>
+                    <button mat-raised-button class="btn btn-primary btn-round">Register</button>
                   </div>
                 </div>
                 

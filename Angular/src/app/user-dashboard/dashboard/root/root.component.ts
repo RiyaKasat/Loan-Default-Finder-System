@@ -31,9 +31,12 @@ export class RootComponent implements OnInit, OnDestroy {
     this.settingService.sidebarColorUpdate.unsubscribe();
   }
 
+  p:any;
+  data:any=[];
   public getAllOffers()
   {
     this. userdashboardservice.getAllOffers().subscribe((response)=>{
+      this.data=response;
       console.log('response is ', response)
       },(error) => {
       console.log('error is ', error)

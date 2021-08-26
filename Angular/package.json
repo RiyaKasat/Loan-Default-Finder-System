@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start-pwa": "ng build --prod && http-server -p 4300 -c-1 --proxy http://localhost:3001 dist/loan-defaulter-system",
-    "start": "ng serve --port 4300",
+    "start-pwa": "ng build --prod && http-server -p 4200 -c-1 --proxy http://localhost:3001 dist/loan-defaulter-system",
+    "start": "ng serve --port 4200",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -47,6 +47,7 @@
     "ngx-intl-tel-input": "^3.1.1",
     "ngx-mat-intl-tel-input": "^4.0.0",
     "ngx-owl-carousel-o": "^6.0.0",
+    "ngx-pagination": "^5.1.1",
     "popper.js": "^1.16.1",
     "run-sequence": "2.2.0",
     "rxjs": "~6.6.0",
