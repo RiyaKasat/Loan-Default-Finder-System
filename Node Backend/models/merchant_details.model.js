@@ -1,42 +1,21 @@
+const { loan_application } = require(".");
+
 module.exports = function (sequelize, DataTypes) {
     
     return sequelize.define('merchant_details', {
- 
+   
     bankName: {
     type:DataTypes.STRING,
     allowNull:false
           },
 
-    accountNumber: {
-    type:DataTypes.STRING,
-    allowNull:false  },
+ 
     
     isfcCode: {
     type:DataTypes.STRING,
     allowNull:false,
           },
-
-          bankAddress:{
-            type:DataTypes.STRING(30),
-            allowNull:false,   
-         },
-//     merchantId: {
-//     type:DataTypes.INTEGER(10),
-//     allowNull:false,
-//           },
-          aadharNumber: {
-            type:DataTypes.INTEGER(15),
-            allowNull:false,
-                  },
-                  panNumber: {
-                    type:DataTypes.INTEGER(15),
-                    allowNull:false,
-                          },
-                          security_file: {
-                            type:DataTypes.BLOB,
-                            allowNull:false,
-                                  },
-                                  security: {
+ security: {
                                     type:DataTypes.STRING(50),
                                     allowNull:false,
                                           },
@@ -45,10 +24,50 @@ module.exports = function (sequelize, DataTypes) {
                                             allowNull:false,
                                             default:5
                                                   },
-                                                  businessType: {
-                                                    type:DataTypes.STRING(100),
-                                                    allowNull:false,
-                                                          }
+
+                                                  loanApplicationId: {
+                                                      type: DataTypes.INTEGER,
+                                                      references: {
+                                                        model: loan_application,
+                                                        key: 'id',
+                                                        as: 'loanApplicationId',
+                                                      },
+                                                      allowNull: false
+                                                
+                                                   },
+                                                        
+                                                //    userId: {
+                                                //       type: DataTypes.INTEGER,
+                                                //       references: {
+                                                //         model: user,
+                                                //         key: 'id',
+                                                //         as: 'userId',
+                                                //       },
+                                                //       allowNull: false
+                                                //     },
+    identityProof:{
+          type: DataTypes.BLOB,
+          allowNull:false
+    },
+
+    AddressProof:
+    {
+      type: DataTypes.BLOB ,
+      allowNull:false   
+    },
+
+    financialDocuments:
+    {
+      type: DataTypes.BLOB ,
+      allowNull:false     
+    },
+
+    BusinessOwnershipProof:
+    {
+      type: DataTypes.BLOB ,
+      allowNull:false       
+    }
+                                                  
                                                           
     
         },

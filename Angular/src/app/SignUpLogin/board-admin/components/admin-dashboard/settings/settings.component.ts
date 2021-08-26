@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SettingsService } from '../../services/settings.service';
+import { AdminSettingsService } from '../../admin-services/settings.service';
+
 
 @Component({
   selector: 'admin-app-settings',
@@ -8,7 +9,7 @@ import { SettingsService } from '../../services/settings.service';
 })
 export class AdminSettingsComponent implements OnInit {
 
-  constructor(public settingService: SettingsService) { }
+  constructor(public settingService: AdminSettingsService) { }
 
   ngOnInit() {
     const defaultId = this.settingService.getSidebarImageIndex();

@@ -1,0 +1,6 @@
+https://www.kaggle.com/c/loanapprove/data
+https://towardsdatascience.com/loan-default-prediction-an-end-to-end-ml-project-with-real-bank-data-part-1-1405f7aecb9e
+
+https://link.springer.com/article/10.1057/s11369-021-00213-8
+
+https://developers.enigma.com/reference#post_businesses-match

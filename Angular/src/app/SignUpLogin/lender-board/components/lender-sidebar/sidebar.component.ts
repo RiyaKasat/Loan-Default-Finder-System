@@ -1,5 +1,6 @@
 import {AfterViewInit, Component, OnInit, OnDestroy} from '@angular/core';
-import { SettingsService } from '../services/settings.service';
+import { LenderSettingsService } from '../services/Lendersettings.service';
+
 import { ROUTES } from './sidebar-routes.config';
 
 @Component({
@@ -13,7 +14,7 @@ export class LenderSidebarComponent implements OnInit, AfterViewInit, OnDestroy 
   public activeFontColor: string;
   public normalFontColor: string;
   public dividerBgColor: string;
-  constructor(public settingsService: SettingsService) {
+  constructor(public settingsService: LenderSettingsService) {
     this.menuItems = ROUTES;
     this.activeFontColor = 'rgba(0,0,0,.6)';
     this.normalFontColor = 'rgba(255,255,255,.8)';

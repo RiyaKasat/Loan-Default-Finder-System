@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SettingsService } from '../../services/settings.service';
+import { LenderSettingsService} from '../../services/Lendersettings.service';
 
 @Component({
   selector: 'lender-app-settings',
@@ -8,7 +8,7 @@ import { SettingsService } from '../../services/settings.service';
 })
 export class LenderSettingsComponent implements OnInit {
 
-  constructor(public settingService: SettingsService) { }
+  constructor(public settingService: LenderSettingsService) { }
 
   ngOnInit() {
     const defaultId = this.settingService.getSidebarImageIndex();

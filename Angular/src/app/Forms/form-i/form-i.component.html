@@ -28,8 +28,17 @@
                 </mat-error> -->
               </mat-form-field><br>
 
-              <mat-label>Bank Statement of Last 6 months *</mat-label>
-        <app-file-upload></app-file-upload>
+              <mat-label>Identity Proof *</mat-label>
+               <app-file-upload></app-file-upload>
+
+               <mat-label>Address Proof *</mat-label>
+               <app-file-upload></app-file-upload>
+
+               <mat-label>Financial Documents *</mat-label>
+               <app-file-upload></app-file-upload>
+
+               <mat-label>Business Ownership Proof *</mat-label>
+               <app-file-upload></app-file-upload>
 
               <button class="submit-btn" color="primary" mat-raised-button type="submit" [disabled]="!bankDetailsForm.valid">
                 Submit

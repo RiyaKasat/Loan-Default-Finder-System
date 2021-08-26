@@ -1,7 +1,7 @@
 import { Injectable, EventEmitter } from '@angular/core';
 
 @Injectable()
-export class SettingsService {
+export class AdminSettingsService {
   public sidebarImageIndex = 0;
   public sidebarImageIndexUpdate: EventEmitter<number> = new EventEmitter();
   public sidebarFilter = '#fff';

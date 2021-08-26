@@ -23,7 +23,7 @@ module.exports = function(app) {
    //Loan Application
    app.post("/api/createloanApp/", LoanAppcontroller.createLoanApplication);
    app.get("/api/getAllApplicationsByUser", LoanAppcontroller.findAllLoanApplications);
-   app.get("/api/getAllLoanAppByMod",  [authJwt.verifyToken, authJwt.isModerator], LoanAppcontroller.findAllLoanApplicationsbyModerator);
+   app.get("/api/getAllLoanAppByMod", LoanAppcontroller.findAllLoanApplicationsbyModerator);
 
   //  app.get("/api/getUserId",  LoanAppcontroller.findUserId);
 

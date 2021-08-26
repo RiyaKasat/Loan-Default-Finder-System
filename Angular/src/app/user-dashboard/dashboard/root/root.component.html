@@ -1,10 +1,38 @@
-<div class="wrapper">
-  <div class="sidebar-panel" id="sidebar" [style.background-color]="backgroundColor">
 
-    <!-- <div class="sidebar-background" [style.background-image]="'url(../assets/img/sidebar-' + id + '.jpg)'"></div> -->
+<!-- <div>
+  <div class="sidebar-panel"  id="sidebar" [style.background-color]="backgroundColor">
+
     <app-sidebar></app-sidebar>
   </div>
   <div class="main-panel" id="main-panel">
     <router-outlet></router-outlet>
+  </div>
+</div>  -->
+
+<div class="container-fluid">
+  <div class="row flex-nowrap">
+      <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+          <div class=" sidebar-panel d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100"  id="sidebar">
+              <!-- <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                  <span class="fs-5 d-none d-sm-inline">Menu</span>
+              </a> -->
+              <!-- <div class="sidebar-panel"  id="sidebar" [style.background-color]="backgroundColor"> -->
+
+                <!-- <app-sidebar></app-sidebar> -->
+              <!-- </div> -->
+              <!-- <div class="main-panel" id="main-panel">
+                <router-outlet></router-outlet>
+              </div> -->
+               
+              
+          </div>
+      </div>
+      <div class="col py-3">
+          <h3>Left Sidebar with Submenus</h3>
+          <p class="lead">An example 2-level sidebar with collasible menu items. The menu functions like an "accordion" where only a single menu is be open at a time.</p>
+          <ul class="list-unstyled">
+              <li><h5>Responsive</h5> shrinks in width, hides text labels and collapses to icons only on mobile</li>
+          </ul>
+      </div>
   </div>
 </div>

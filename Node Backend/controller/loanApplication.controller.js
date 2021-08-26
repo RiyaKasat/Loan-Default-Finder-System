@@ -42,6 +42,16 @@ exports.createLoanApplication = (req, res) => {
         userId: req.body.userId,   //Applicant
         lenderOfferingId: req.body.lenderOfferingId,
         lender_email : req.body.lender_email,
+
+   
+establishedSincelast:req.body.establishedSincelast,
+    businessType:req.body.businessType,
+    createdDate:req.body.createdDate,
+    lendername:req.body.lendername,
+
+
+ loanRepaymentAccountNo: req.body.loanRepaymentAccountNo,
+ 
    };
   
     // Save Tutorial in the database

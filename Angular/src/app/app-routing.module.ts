@@ -28,6 +28,23 @@ import { LoginRegisterComponent } from './SignUpLogin/register/register.componen
 import { FormIComponent } from './Forms/form-i/form-i.component';
 import { AdminAddOfferComponent } from './Forms/admin-add-offer/admin-add-offer.component';
 import { ContactUsFormComponent } from './Forms/contact-us-form/contact-us-form.component';
+import { LenderRootComponent } from './SignUpLogin/lender-board/components/lender-dashboard/root/root.component';
+import { LenderHomeComponent } from './SignUpLogin/lender-board/components/lender-dashboard/home/home.component';
+import { LenderProfileComponent } from './SignUpLogin/lender-board/components/lender-dashboard/profile/profile.component';
+import { LenderTableComponent } from './SignUpLogin/lender-board/components/lender-dashboard/table/table.component';
+import { LenderSettingsComponent } from './SignUpLogin/lender-board/components/lender-dashboard/settings/settings.component';
+import { LenderPriceTableComponent } from './SignUpLogin/lender-board/components/lender-dashboard/component/pricetable/pricetable.component';
+import { LenderPanelsComponent } from './SignUpLogin/lender-board/components/lender-dashboard/component/panels/panels.component';
+import { LenderWizardComponent } from './SignUpLogin/lender-board/components/lender-dashboard/component/wizard/wizard.component';
+import { UserProfileComponent } from './SignUpLogin/lender-board/components/lender-dashboard/user-profile/user-profile.component';
+import { AdminPanelsComponent } from './SignUpLogin/board-admin/Components/admin-dashboard/component/panels/panels.component';
+import { AdminPriceTableComponent } from './SignUpLogin/board-admin/Components/admin-dashboard/component/pricetable/pricetable.component';
+import { AdminWizardComponent } from './SignUpLogin/board-admin/Components/admin-dashboard/component/wizard/wizard.component';
+import { AdminHomeComponent } from './SignUpLogin/board-admin/Components/admin-dashboard/home/home.component';
+import { AdminProfileComponent } from './SignUpLogin/board-admin/Components/admin-dashboard/profile/profile.component';
+import { AdminSettingsComponent } from './SignUpLogin/board-admin/Components/admin-dashboard/settings/settings.component';
+import { AdminTableComponent } from './SignUpLogin/board-admin/Components/admin-dashboard/table/table.component';
+
 
 
 const Approutes: Routes = [
@@ -62,10 +79,7 @@ const Approutes: Routes = [
     {path: '', component: HomeComponent},
     {path: 'profile', component: ProfileComponent},
     {path: 'table', component: TableComponent},
-    {
-      path: 'loancalculator', 
-      component : LoanComponentComponent
-    },
+    {path: 'loancalculator', component : LoanComponentComponent},
     {path: 'notification', component: NotificationComponent},
     {path: 'alert', component: SweetAlertComponent},
     {path: 'settings', component: SettingsComponent},
@@ -77,8 +91,7 @@ const Approutes: Routes = [
 
   { path: 'applicationform', component: FormsComponent },
   {
-    path:'bankdetails',
-    component: FormIComponent
+    path:'bankdetails',component: FormIComponent
   },
   {
     path:'adminoffer',component:AdminAddOfferComponent
@@ -98,8 +111,42 @@ const Approutes: Routes = [
 
   
   { path: 'user', component: BoardUserComponent },
-  { path: 'mod', component: LenderBoardComponent },
-  { path: 'admin', component: BoardAdminComponent },
+  { path: 'mod', component: LenderBoardComponent ,
+   children:[
+
+      {path: '', component: LenderHomeComponent},
+      {path: 'profile', component: LenderProfileComponent},
+      {path: 'table', component: LenderTableComponent},
+      //  {path: 'loancalculator', component : LenderLoanComponentComponent},
+     
+      {path: 'settings', component: LenderSettingsComponent},
+    
+      {path: 'components/price-table', component: LenderPriceTableComponent},
+      {path: 'components/panels', component: LenderPanelsComponent},
+      {path: 'components/wizard', component: LenderWizardComponent}
+
+]},
+{path:'userprofile', component:UserProfileComponent},
+   
+ 
+  { path: 'admin', component: BoardAdminComponent,
+  children:[
+
+    {path: '', component: AdminHomeComponent},
+    {path: 'profile', component: AdminProfileComponent},
+    {path: 'table', component: AdminTableComponent},
+    //  {path: 'loancalculator', component : LenderLoanComponentComponent},
+   
+    {path: 'settings', component: AdminSettingsComponent},
+  
+    {path: 'components/price-table', component: AdminPriceTableComponent},
+    {path: 'components/panels', component: AdminPanelsComponent},
+    {path: 'components/wizard', component: AdminWizardComponent}
+
+]}, 
+
+ 
+  
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
