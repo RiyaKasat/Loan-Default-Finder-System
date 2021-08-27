@@ -1,38 +1,61 @@
-<!-- <app-header-component></app-header-component> -->
-<!-- 
-<app-sign-up-login></app-sign-up-login> -->
 
-<div id="app" style="margin-top: 5px;">
-<!-- 
-  <a class="navbar-brand" href="#">FINLONA</a> -->
-  <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-  </button> -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-sticky-top">
-      <a href="#" class="navbar-brand">FINLONA</a>
-      <ul class="navbar-nav mr-auto" routerLinkActive="active">
-        <li class="nav-item">
-          <a href="/home" class="nav-link" routerLink="home">Home </a>
-        </li>
-        <li class="nav-item" *ngIf="showAdminBoard">
-          <a href="/admin" class="nav-link" routerLink="admin">Admin Board</a>
-        </li>
-        <li class="nav-item" *ngIf="showModeratorBoard">
-          <a href="/mod" class="nav-link" routerLink="mod">Lender Board</a>
-        </li>
-        <li class="nav-item">
-          <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="user">User</a>
-        </li>
-        <li class="nav-item">
+
+
+
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">FINLONA</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a href="/home" class="nav-link" routerLink="home">Home </a>
+          </li>
+          <li class="nav-item" *ngIf="showAdminBoard">
+            <a href="/admin" class="nav-link" routerLink="admin">Admin Board</a>
+          </li>
+
+          <li class="nav-item" *ngIf="showModeratorBoard">
+            <a href="/mod" class="nav-link" routerLink="admin">Lender Board</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="user">User</a>
+          </li>
+
+          <li class="nav-item">
             <a class="nav-link" routerLink="/dashboard" routerLinkActive="router-active">Dashboard</a>
         </li>
-        <li class="nav-item">
+
+
+          <li class="nav-item">
             <a class="nav-link active" routerLink="/applicationform" routerLinkActive="router-active">Apply Loan</a>
-        </li>
-      </ul>
-  
-      <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+      
+
+        
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngIf="!isLoggedIn">
         <li class="nav-item">
           <a href="/register" class="nav-link" routerLink="register">Sign Up</a>
         </li>
@@ -41,7 +64,7 @@
         </li>
       </ul>
   
-      <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngIf="isLoggedIn">
         <li class="nav-item">
           <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
         </li>
@@ -49,13 +72,11 @@
           <a href class="nav-link" (click)="logout()">LogOut</a>
         </li>
       </ul>
-    </nav>
-  
-    <div class="container">
-      <router-outlet></router-outlet>
-    </div>
-  </div>
 
+
+      </div>
+    </div>
+  </nav>
 
 <router-outlet></router-outlet>
 <!-- <app-footer-component></app-footer-component> -->

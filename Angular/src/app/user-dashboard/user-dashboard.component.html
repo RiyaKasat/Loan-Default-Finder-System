@@ -1,2 +1,11 @@
 <p>user-dashboard works!</p>
 <!-- <app-footer-component></app-footer-component> -->
+
+<div class="wrapper">
+    <div class=" col-lg-1">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div  class="col-lg-11 " id="main-panel">
+      <router-outlet></router-outlet>
+    </div>
+  </div>

@@ -126,7 +126,7 @@ const Approutes: Routes = [
       {path: 'components/wizard', component: LenderWizardComponent}
 
 ]},
-{path:'userprofile', component:UserProfileComponent},
+    {path:'userprofile/:id', component:UserProfileComponent},
    
  
   { path: 'admin', component: BoardAdminComponent,

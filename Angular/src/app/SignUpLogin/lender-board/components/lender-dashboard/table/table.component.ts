@@ -72,7 +72,7 @@ export class LenderTableComponent implements OnInit {
 
   public getAllByMod()
   {
-    this.userdashboardservice.getAllLoanApplicationsByMod(this.email).subscribe((response)=>{
+      this.userdashboardservice.getAllLoanApplicationsByMod(this.email).subscribe((response)=>{
       this.dataSource = new MatTableDataSource(<any>response);
       console.log('Loan Appln response ', response)
       this.loanApplicationsArr = response;
@@ -82,9 +82,11 @@ export class LenderTableComponent implements OnInit {
       })
   }
 
-  Viewprofile(id)
+  public Viewprofile(id) 
   {
-    this.router.navigate(['userprofile'], { queryParams: { id: id} });
+    console.log("elements id");
+    console.log(id);
+    this.router.navigate(['userprofile', id], { queryParams: { id: id} });
   }
 
 

@@ -35,6 +35,12 @@ export class LenderDashboardService {
   }
   
 
+
+  getLoanApplicationById(id:number){
+    return this.http.get(`${environment.apiUrl}getLoanApplicationById/${id}`
+    );
+  }
+
   getTransferIp() {
     let header = new HttpHeaders().set(
       "Authorization",

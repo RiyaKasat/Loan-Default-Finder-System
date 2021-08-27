@@ -88,6 +88,22 @@ exports.findAllLoanApplications = (req, res) => {
   };
 
 
+  exports.findLoanApplicationById = (req, res) => {
+
+    const id = req.params.id;
+    // console.log(req.body);
+      loan_application.findByPk(id)
+        .then(data => {
+          res.send(data);
+        })
+        .catch(err => {
+          res.status(500).send({
+            message:
+              err.message || "Some error occurred while retrieving Loan Applications."
+          });
+        });
+    };
+
 
 
   //done
@@ -125,6 +141,9 @@ exports.findAllLoanApplications = (req, res) => {
         });
       });
  };
+
+
+
 
 
 

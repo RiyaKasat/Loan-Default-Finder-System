@@ -24,6 +24,7 @@ module.exports = function(app) {
    app.post("/api/createloanApp/", LoanAppcontroller.createLoanApplication);
    app.get("/api/getAllApplicationsByUser", LoanAppcontroller.findAllLoanApplications);
    app.get("/api/getAllLoanAppByMod", LoanAppcontroller.findAllLoanApplicationsbyModerator);
+   app.get("/api/getLoanApplicationById/:id",LoanAppcontroller.findLoanApplicationById )
 
   //  app.get("/api/getUserId",  LoanAppcontroller.findUserId);
 

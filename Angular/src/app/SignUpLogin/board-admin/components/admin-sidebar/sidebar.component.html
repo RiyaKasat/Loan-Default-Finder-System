@@ -1,13 +1,30 @@
-<div class="logo text-uppercase" [style.color]="normalFontColor">
+<!-- <div class="logo text-uppercase" [style.color]="normalFontColor">
   <img src="../../assets/img/angular2-logo.png" class="logo-img" alt="logo"/>
   Dashboard Pro
 </div>
-<div class="divider" [style.background-color]="dividerBgColor"></div>
-<div class="sidebar-wrapper">
-  <div class="nav-container">
-    <ul class="nav">
-      <li *ngFor="let menuItem of menuItems" routerLinkActive #rla="routerLinkActive" [ngClass]="rla.isActive? (menuItem.children === null? 'active' : '') : ''" [routerLinkActiveOptions]="{exact: true}">
-        <a [style.display]="menuItem.children === null? 'flex' : 'none'" [routerLink]="[menuItem.path]" [style.background-color]="rla.isActive? color : 'transparent'" [style.color]="rla.isActive? activeFontColor : normalFontColor">
+<div class="divider" [style.background-color]="dividerBgColor"></div> -->
+
+<header class="py-3">
+	<a href="#" class="sidebar-toggler position-absolute m-2 bg-dark d-block d-md-none" data-toggle="collapse" data-target="#sidebar-main" aria-controls="sidebar-main" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="sidebar-toggler-icon"></span>
+	</a>
+
+</header>
+<div class="sidebar sidebar-default sidebar-separate sidebar-fixed" id="sidebar-main">
+  <div class="sidebar-content">
+    <div class="sidebar-category sidebar-default">
+			<!-- <div class="sidebar-user">
+				<div class="category-content">
+					<h6>John Doe</h6>
+					<small>Admin</small>
+				</div>
+			</div> -->
+		</div>
+    <div class="sidebar-category sidebar-default">
+    <div class="category-content">
+    <ul id="fruits-nav" class="nav flex-column">
+     <li  class="nav-item" *ngFor="let menuItem of menuItems" routerLinkActive #rla="routerLinkActive" [ngClass]="rla.isActive? (menuItem.children === null? 'active' : '') : ''" [routerLinkActiveOptions]="{exact: true}">
+        <a  class="nav-link"[style.display]="menuItem.children === null? 'flex' : 'none'" [routerLink]="[menuItem.path]" [style.background-color]="rla.isActive? color : 'transparent'" [style.color]="rla.isActive? activeFontColor : normalFontColor">
           <i class="material-icons">{{menuItem.icon}}</i>
           <span>{{menuItem.title}}</span>
         </a>
@@ -30,5 +47,8 @@
         </div>
       </li>
     </ul>
+    </div>
+</div>
   </div>
 </div>
+
