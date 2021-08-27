@@ -5,6 +5,9 @@ import {
   FormGroup,
   Validators
 } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { LenderDashboardService } from 'src/app/SignUpLogin/lender-board/lender-dashboard.service';
 import Validation from './utils/validation';
 
 @Component({
@@ -15,10 +18,21 @@ import Validation from './utils/validation';
 export class AdminUpdateOfferComponent implements OnInit {
   form: FormGroup;
   submitted = false;
+  private routeSub: Subscription;
+  userloanApplId: any;
+  userFormDataArr;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder, private lenderService :LenderDashboardService,  private route: ActivatedRoute) {}
 
   ngOnInit(): void {
+
+    this.routeSub = this.route.params.subscribe(params => {
+      console.log(params) //log the entire params object
+      console.log(params['id']) //log the value of id
+      this.userloanApplId = params['id'];
+    });
+
+    this.getFormdata(this.userloanApplId);
     this.form = this.formBuilder.group(
       {
         offer_details: ['', Validators.required],
@@ -52,6 +66,15 @@ export class AdminUpdateOfferComponent implements OnInit {
 
   get f(): { [key: string]: AbstractControl } {
     return this.form.controls;
+  }
+
+  public getFormdata(id)
+  {
+    this.lenderService.getLoanApplicationById(id).subscribe((res)=>
+    {
+       this.userFormDataArr = res;
+       console.log("UserFormArr---> ", this.userFormDataArr);
+    })
   }
 
   onSubmit(): void {

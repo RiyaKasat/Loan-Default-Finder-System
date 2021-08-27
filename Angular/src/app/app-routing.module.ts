@@ -98,7 +98,7 @@ const Approutes: Routes = [
     path:'adminoffer',component:AdminAddOfferComponent
   },
   {
-    path:'updateoffer',component:AdminUpdateOfferComponent
+    path:'updateoffer/:id',component:AdminUpdateOfferComponent
   },
   {
     path:'contact-us',component:ContactUsFormComponent

@@ -42,15 +42,22 @@ exports.createLoanApplication = (req, res) => {
         userId: req.body.userId,   //Applicant
         lenderOfferingId: req.body.lenderOfferingId,
         lender_email : req.body.lender_email,
+        form_modified: req.body.form_modified,
+        
+        offer_details: req.body.offer_details,
+        tenure: req.body.tenure,
+        interest_rate:req.body.interest_rate,
+        loan_type: req.body.loan_type,
+        lender_email : req.body.lender_email,    //lender's email.
+        lender_name: req.body.lender_name,
 
-   
-establishedSincelast:req.body.establishedSincelast,
-    businessType:req.body.businessType,
-    createdDate:req.body.createdDate,
-    lendername:req.body.lendername,
+        establishedSincelast:req.body.establishedSincelast,
+        businessType:req.body.businessType,
+        createdDate:req.body.createdDate,
+        lendername:req.body.lendername,
 
 
- loanRepaymentAccountNo: req.body.loanRepaymentAccountNo,
+        loanRepaymentAccountNo: req.body.loanRepaymentAccountNo,
  
    };
   

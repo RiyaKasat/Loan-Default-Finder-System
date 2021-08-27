@@ -35,6 +35,11 @@ export class LenderDashboardService {
   }
   
 
+  
+  modifyLoanAppliactionOffer(id:number){
+    return this.http.get(`${environment.apiUrl}getLoanApplicationById/${id}`
+    );
+  }
 
   getLoanApplicationById(id:number){
     return this.http.get(`${environment.apiUrl}getLoanApplicationById/${id}`
