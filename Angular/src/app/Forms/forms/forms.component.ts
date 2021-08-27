@@ -188,7 +188,8 @@ goformi(){
 
     // user details form validations
     this.userDetailsForm = this.fb.group({
-      
+      fullname: ['', Validators.required ],
+      birthday: ['', Validators.required],
       gender: new FormControl(this.genders[0], Validators.required),
       country_phone: this.country_phone_group,
       loanamount: ['', [Validators.required, Validators.pattern("^[0-9]*$")]],
