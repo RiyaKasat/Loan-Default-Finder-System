@@ -31,9 +31,9 @@ export class UserProfileComponent implements OnInit {
    this.lenderService.getLoanApplicationById(id).subscribe((res) =>
    {
       this.userData = res;
-      // console.log(this.userData["businessPremise"]);
-      // console.log("User Data");
-      // console.log(this.userData);
+      console.log(this.userData["businessPremise"]);
+      console.log("User Data");
+      console.log(this.userData);
        this.name = this.userData["fullname"];
      
    })

@@ -15,10 +15,10 @@
           </div>
           <div class="panel-body bio-graph-info">
               <h1>Bio Graph</h1>
-              <div class="row"  *ngFor="let o of userData">
+              <div class="row"  *ngIf="userData" >
                   <div class="bio-row">
                       <!-- <input value="UserData[""]"> -->
-                      <p><span>First Name </span>{{o.fullname}}</p>
+                      <p><span>First Name </span>{{userData.fullname}}</p>
                   </div>
                   <div class="bio-row">
                       <p><span>Last Name </span>: Smith</p>

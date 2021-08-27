@@ -44,6 +44,7 @@ import { AdminHomeComponent } from './SignUpLogin/board-admin/Components/admin-d
 import { AdminProfileComponent } from './SignUpLogin/board-admin/Components/admin-dashboard/profile/profile.component';
 import { AdminSettingsComponent } from './SignUpLogin/board-admin/Components/admin-dashboard/settings/settings.component';
 import { AdminTableComponent } from './SignUpLogin/board-admin/Components/admin-dashboard/table/table.component';
+import { AdminUpdateOfferComponent } from './Forms/admin-update-offer/admin-update-offer.component';
 
 
 
@@ -96,7 +97,9 @@ const Approutes: Routes = [
   {
     path:'adminoffer',component:AdminAddOfferComponent
   },
-
+  {
+    path:'updateoffer',component:AdminUpdateOfferComponent
+  },
   {
     path:'contact-us',component:ContactUsFormComponent
   },

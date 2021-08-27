@@ -1,7 +1,7 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { TokenStorageService } from 'src/app/SignUpLogin/_services/token-storage.service';
+import { TokenStorageService } from '../../../SignUpLogin/_services/token-storage.service';
 import { LoanApplications } from '../../models/LoanApplications';
 import { UserDashboardService } from '../../user-dashboard.service';
 
