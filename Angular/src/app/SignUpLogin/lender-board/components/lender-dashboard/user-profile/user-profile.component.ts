@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { LenderDashboardService } from '../../../lender-dashboard.service';
 
@@ -11,11 +11,13 @@ import { LenderDashboardService } from '../../../lender-dashboard.service';
 export class UserProfileComponent implements OnInit {
 
   private routeSub: Subscription;
-  constructor(private lenderService: LenderDashboardService, private route: ActivatedRoute) { }
+  formId: any;
+  constructor(private lenderService: LenderDashboardService, private route: ActivatedRoute, private router: Router) { }
 
   userloanApplId: any;
   userData;
-  name:any;
+  Lender_offeringsId:any;
+
 
   ngOnInit(): void {
     this.routeSub = this.route.params.subscribe(params => {
@@ -31,19 +33,27 @@ export class UserProfileComponent implements OnInit {
    this.lenderService.getLoanApplicationById(id).subscribe((res) =>
    {
       this.userData = res;
-      // console.log(this.userData["businessPremise"]);
-      // console.log("User Data");
-      // console.log(this.userData);
-       this.name = this.userData["fullname"];
+      console.log(this.userData["businessPremise"]);
+      console.log("User Data");
+      console.log(this.userData);
+       this.Lender_offeringsId = this.userData["lender_offeringsId"];
+       this.formId = this.userData["id"];
      
    })
    
 
    console.log(this.userData);
 
-
-  
   }
+
+
+   public ModifyOffer(id)
+   {
+      
+    this.router.navigate(['updateoffer', id], { queryParams: { id: id} });
+   }
+  
+  
 
   
 

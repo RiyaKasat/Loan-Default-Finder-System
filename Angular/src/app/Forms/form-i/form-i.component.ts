@@ -2,7 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { SendEmailService } from 'src/app/send-email.service';
+import { SendEmailService } from '../../send-email.service';
 import {
   Country,
   UsernameValidator,

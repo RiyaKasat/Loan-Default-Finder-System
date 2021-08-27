@@ -126,8 +126,44 @@ module.exports = function (sequelize, DataTypes) {
     lender_email : {
       type:DataTypes.STRING(30),
       allowNull:false,   
-    }
+    },
+    form_modified:
+    {
+      type: DataTypes.STRING(30),
+      allowNull:false,
+      default:"Not Modified"
+    },
+    
 
+    offer_details: {
+      type: DataTypes.STRING
+    },
+
+    tenure:{
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
+    interest_rate: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+
+    loan_type:
+    {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    
+
+    lender_email:{
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+
+    lender_name:{
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
                      
 },
         {

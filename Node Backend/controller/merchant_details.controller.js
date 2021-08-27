@@ -84,7 +84,7 @@ const createMerchantDetails = async(req, res) => {
               loanApplicationId: req.body.loanApplicationId,
 
               identityProof:fs.readFileSync(
-            __basedir + "/resources/static/assets/uploads/" + req.file.filename ),
+            __basedir + "/resources/static/assets/uploads/" + req.file.filename),
 
 
                 AddressProof:fs.readFileSync(
@@ -97,14 +97,7 @@ const createMerchantDetails = async(req, res) => {
 
                 BusinessOwnershipProof: fs.readFileSync(
                   __basedir + "/resources/static/assets/uploads/" + req.file.filename
-                ),
-                                                              
-                    
-
-                              
-                                       
-                                                         
-                                                                    
+                ),                                                                   
           
      };
     

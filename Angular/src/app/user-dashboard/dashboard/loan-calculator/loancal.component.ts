@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { TokenStorageService } from 'src/app/SignUpLogin/_services/token-storage.service';
+import { TokenStorageService } from '../../../SignUpLogin/_services/token-storage.service';
 import { UserDashboardService } from '../../user-dashboard.service';
 import { Router } from '@angular/router';
 

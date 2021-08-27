@@ -22,6 +22,8 @@
     "mysql2": "^2.3.0",
     "nodemailer": "^6.6.3",
     "nodemon": "^2.0.12",
-    "sequelize": "^5.21.12"
+    "sequelize": "^5.21.12",
+    "web-push": "file:C:/Users/10674007/AppData/Roaming/npm/node_modules/web-push",
+    "winston": "file:C:/Users/10674007/AppData/Roaming/npm/node_modules/winston"
   }
 }
