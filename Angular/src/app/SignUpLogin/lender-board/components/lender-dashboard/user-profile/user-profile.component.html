@@ -14,40 +14,69 @@
               Aliquam ac magna metus. Nam sed arcu non tellus fringilla fringilla ut vel ispum. Aliquam ac magna metus.
           </div>
           <div class="panel-body bio-graph-info">
-              <h1>Bio Graph</h1>
+              <h1>User Detail's</h1>
               <div class="row"  *ngIf="userData" >
                   <div class="bio-row">
                       <!-- <input value="UserData[""]"> -->
-                      <p><span>First Name </span>{{userData.fullname}}</p>
+                      <p><span>Form ID</span>:{{userData.id}}</p>
                   </div>
                   <div class="bio-row">
-                      <p><span>Last Name </span>: Smith</p>
+                    <p><span>User ID</span>: {{userData.contact}}</p>
+                </div>
+                  <div class="bio-row">
+                      <p><span>Applicant's Name </span>:{{userData.fullname}}</p>
                   </div>
                   <div class="bio-row">
-                      <p><span>Country </span>: Australia</p>
+                      <p><span>DOB</span>:{{userData.birthday}}</p>
                   </div>
                   <div class="bio-row">
-                      <p><span>Birthday</span>: 13 July 1983</p>
+                      <p><span>Gender</span>: {{userData.gender}}</p>
                   </div>
                   <div class="bio-row">
-                      <p><span>Occupation </span>: UI Designer</p>
+                      <p><span>Email</span>:{{userData.email}}</p>
                   </div>
                   <div class="bio-row">
-                      <p><span>Email </span>: jsmith@flatlab.com</p>
+                      <p><span>Comapany Name</span>: {{userData.company_name}}</p>
                   </div>
                   <div class="bio-row">
-                      <p><span>Mobile </span>: (12) 03 4567890</p>
+                      <p><span>Company PAN</span>: {{userData.company_pancard}}</p>
                   </div>
                   <div class="bio-row">
-                      <p><span>Phone </span>: 88 (02) 123456</p>
+                      <p><span>Contact</span>: {{userData.contact}}</p>
                   </div>
-
-
-                  <div class="example-button-row">
-                    <button mat-raised-button color="primary" (click)="ModifyOffer(userData.id)">Modify Offer</button>
-                    <button mat-raised-button color="primary">Primary</button>
-                    <button mat-raised-button color="primary">Primary</button>
-              </div>
+                  <div class="bio-row">
+                    <p><span>Business Premise</span>: {{userData.businessPremise}}</p>
+                </div>
+                <div class="bio-row">
+                    <p><span>City</span>: {{userData.city}}</p>
+                </div>
+                <div class="bio-row">
+                    <p><span>Pincode</span>: {{userData.pincode}}</p>
+                </div>
+                <div class="bio-row">
+                    <p><span>State</span>: {{userData.state}}</p>
+                </div>
+                <div class="bio-row">
+                    <p><span>Loan Status</span>: {{userData.loanStatus}}</p>
+                </div>
+                <div class="bio-row">
+                    <p><span>Lender Offering ID</span>: {{userData.lenderOfferingId}}</p>
+                </div>
+                <div class="bio-row">
+                    <p><span>Lender Email</span>: {{userData.lender_email}}</p>
+                </div>
+                <div class="bio-row">
+                    <p><span>Loan Amount</span>: {{userData.loanAmount}}</p>
+                </div>
+                <div class="bio-row">
+                    <p><span>Loan Repayment Account No.</span>: {{userData.loanRepaymentAccountNo}}</p>
+                </div>
+                <div class="bio-row">
+                    <p><span>Sales Last Year</span>: {{userData.salesLastYear}}</p>
+                </div>
+                <div class="bio-row">
+                    <p><span>Years in Current Sales</span>: {{userData.yearsInCurrentSales}}</p>
+                </div>
               </div>
           </div>
       </div>

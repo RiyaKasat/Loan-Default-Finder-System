@@ -1,4 +1,9 @@
-const { user, lender_offerings, role} = require("../models");
+const db  = require("../models");
+const userModel = require("../models/user.model");
+const lender_offerings = db.lender_offerings;
+const role = db.role;
+const user = db.user;
+const logger = require('../Middleware/logger')
 
 exports.allAccess = (req, res) => {
     res.status(200).send("Public Content.");
@@ -101,3 +106,23 @@ exports.allAccess = (req, res) => {
         });
       });
   };
+
+
+  exports.getRegisteredUserLoginData = (req, res)=>
+  {
+   
+    const id = req.params.id;
+    console.log("userid node:",id);
+    logger.info("Userid get request",id);
+    user.findByPk(id)
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving Loan Applications."
+      });
+    });
+};
+

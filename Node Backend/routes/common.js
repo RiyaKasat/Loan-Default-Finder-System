@@ -1,6 +1,8 @@
 const { authJwt } = require("../middleware");
 const LendingOfferscontroller = require("../controller/lenders_offerings.controller");
 const LoanAppcontroller = require("../controller/loanApplication.controller");
+const usercontroller = require("../controller/user.controller");
+
 
 module.exports = function(app) {
   app.use(function(req, res, next) {
@@ -24,7 +26,9 @@ module.exports = function(app) {
    app.post("/api/createloanApp/", LoanAppcontroller.createLoanApplication);
    app.get("/api/getAllApplicationsByUser", LoanAppcontroller.findAllLoanApplications);
    app.get("/api/getAllLoanAppByMod", LoanAppcontroller.findAllLoanApplicationsbyModerator);
-   app.get("/api/getLoanApplicationById/:id",LoanAppcontroller.findLoanApplicationById )
+   app.get("/api/getLoanApplicationById/:id",LoanAppcontroller.findLoanApplicationById );
+
+   app.get("/api/getLoginUserData/:id", usercontroller.getRegisteredUserLoginData);
 
   //  app.get("/api/getUserId",  LoanAppcontroller.findUserId);
 
