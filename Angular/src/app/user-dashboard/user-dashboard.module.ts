@@ -41,6 +41,7 @@ import { FooterComponentComponent } from '../home-component/footer-component/foo
 
 import { MatTableModule } from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
+import { LoanDetailsComponent } from './dashboard/loan-details/loan-details.component';
 
 
 @NgModule({
@@ -67,6 +68,7 @@ import { HttpClientModule } from '@angular/common/http';
     PanelsComponent,
     WizardComponent,
     UserDashboardComponent,
+    LoanDetailsComponent,
    
   ],
   imports: [

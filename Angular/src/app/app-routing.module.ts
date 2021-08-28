@@ -45,6 +45,7 @@ import { AdminProfileComponent } from './SignUpLogin/board-admin/Components/admi
 import { AdminSettingsComponent } from './SignUpLogin/board-admin/Components/admin-dashboard/settings/settings.component';
 import { AdminTableComponent } from './SignUpLogin/board-admin/Components/admin-dashboard/table/table.component';
 import { AdminUpdateOfferComponent } from './Forms/admin-update-offer/admin-update-offer.component';
+import { LoanDetailsComponent } from './user-dashboard/dashboard/loan-details/loan-details.component';
 
 
 
@@ -102,6 +103,9 @@ const Approutes: Routes = [
   },
   {
     path:'contact-us',component:ContactUsFormComponent
+  },
+  {
+    path:'loandetails/:id',component:LoanDetailsComponent
   },
 
 

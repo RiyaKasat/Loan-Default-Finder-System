@@ -1,6 +1,7 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { TokenStorageService } from '../../../SignUpLogin/_services/token-storage.service';
 import { LoanApplications } from '../../models/LoanApplications';
 import { UserDashboardService } from '../../user-dashboard.service';
@@ -31,7 +32,7 @@ export class TableComponent implements OnInit {
   userId;
   loanApplicationsArr;
   email;
-  constructor(private tokenService :TokenStorageService, private userdashboardservice: UserDashboardService) { }
+  constructor(private tokenService :TokenStorageService, private userdashboardservice: UserDashboardService,private router: Router) { }
 
   ngOnInit() {
     this.getUserId();
@@ -76,6 +77,10 @@ export class TableComponent implements OnInit {
       },(error) => {
       console.log('error is ', error)
       })
+  }
+
+  goLoanDetails(id){
+    this.router.navigate(['userprofile', id], { queryParams: { id: id} });
   }
 
 

@@ -1,0 +1,122 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container bootstrap snippets bootdey">
+<div class="row">
+
+  <div class="profile-info col-md-12">
+      <div class="panel">
+          <form>
+              <textarea placeholder="Whats in your mind today?" rows="2" class="form-control input-lg p-text-area"></textarea>
+          </form>
+  
+      </div>
+      <div class="panel">
+          <div class="bio-graph-heading">
+              Aliquam ac magna metus. Nam sed arcu non tellus fringilla fringilla ut vel ispum. Aliquam ac magna metus.
+          </div>
+          <div class="panel-body bio-graph-info">
+              <h1>User Detail's</h1>
+              <div class="row"  *ngIf="userData" >
+                  <div class="bio-row">
+                      <!-- <input value="UserData[""]"> -->
+                      <p><span>Form ID</span>:{{userData.id}}</p>
+                  </div>
+                  <div class="bio-row">
+                    <p><span>User ID</span>: {{userData.contact}}</p>
+                </div>
+                  <div class="bio-row">
+                      <p><span>Applicant's Name </span>:{{userData.fullname}}</p>
+                  </div>
+                  <div class="bio-row">
+                      <p><span>DOB</span>:{{userData.birthday}}</p>
+                  </div>
+                  <div class="bio-row">
+                      <p><span>Gender</span>: {{userData.gender}}</p>
+                  </div>
+                  <div class="bio-row">
+                      <p><span>Email</span>:{{userData.email}}</p>
+                  </div>
+                  <div class="bio-row">
+                      <p><span>Comapany Name</span>: {{userData.company_name}}</p>
+                  </div>
+                  <div class="bio-row">
+                      <p><span>Company PAN</span>: {{userData.company_pancard}}</p>
+                  </div>
+                  <div class="bio-row">
+                      <p><span>Contact</span>: {{userData.contact}}</p>
+                  </div>
+                  <div class="bio-row">
+                    <p><span>Business Premise</span>: {{userData.businessPremise}}</p>
+                </div>
+                <div class="bio-row">
+                    <p><span>City</span>: {{userData.city}}</p>
+                </div>
+                <div class="bio-row">
+                    <p><span>Pincode</span>: {{userData.pincode}}</p>
+                </div>
+                <div class="bio-row">
+                    <p><span>State</span>: {{userData.state}}</p>
+                </div>
+                <div class="bio-row">
+                    <p><span>Loan Status</span>: {{userData.loanStatus}}</p>
+                </div>
+                <div class="bio-row">
+                    <p><span>Lender Offering ID</span>: {{userData.lenderOfferingId}}</p>
+                </div>
+                <div class="bio-row">
+                    <p><span>Lender Email</span>: {{userData.lender_email}}</p>
+                </div>
+                <div class="bio-row">
+                    <p><span>Loan Amount</span>: {{userData.loanAmount}}</p>
+                </div>
+                <div class="bio-row">
+                    <p><span>Loan Repayment Account No.</span>: {{userData.loanRepaymentAccountNo}}</p>
+                </div>
+                <div class="bio-row">
+                    <p><span>Sales Last Year</span>: {{userData.salesLastYear}}</p>
+                </div>
+                <div class="bio-row">
+                    <p><span>Years in Current Sales</span>: {{userData.yearsInCurrentSales}}</p>
+                </div>
+               
+                <div class="example-button-row">
+                    <button mat-raised-button color="primary">Accept</button>
+                    <button mat-raised-button color="primary">Reject</button>
+                    <!-- <button mat-raised-button color="primary">Primary</button> -->
+              </div>
+          </div>
+      </div>
+
+      <div class="bio-graph-heading">
+          
+        <div class="bio-row">
+            <p><span>Offer Details: </span>: {{userData.offer_details}}</p>
+        </div>
+        <div class="bio-row">
+            <p><span>Offer Modified: </span>: {{userData.form_modified}}</p>
+        </div>
+        <div class="bio-row">
+            <p><span>Tenure: </span>: {{userData.tenure}}</p>
+        </div>
+        <div class="bio-row">
+            <p><span>Interest Rate: </span>: {{userData.interest_rate}}</p>
+        </div>
+        <div class="bio-row">
+            <p><span>Loan Type: </span>: {{userData.loan_type}}</p>
+        </div>
+        <div class="bio-row">
+            <p><span>Lender's Email: </span>: {{userData.lender_email}}</p>
+        </div>
+        <div class="bio-row">
+            <p><span>Lender Name: </span>: {{userData.lender_name}}</p>
+        </div> 
+        <div class="example-button-row">
+            <button mat-raised-button color="primary">Accept</button>
+            <button mat-raised-button color="primary">Reject</button>
+            <!-- <button mat-raised-button color="primary">Primary</button> -->
+        </div>
+    </div>
+    
+     
+  </div>
+</div>
+</div>
