@@ -129,6 +129,7 @@ const Approutes: Routes = [
       {path: 'components/wizard', component: LenderWizardComponent}
 
 ]},
+
     {path:'userprofile/:id', component:UserProfileComponent},
    
  

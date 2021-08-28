@@ -49,4 +49,8 @@ export class FormIComponent implements OnInit {
   onSubmitBankDetails(value){
     console.log(value);
   }
+
+
+
+  
 }
