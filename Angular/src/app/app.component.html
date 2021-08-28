@@ -28,12 +28,12 @@
             <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="user">User</a>
           </li>
 
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="userBoard">
             <a class="nav-link" routerLink="/dashboard" routerLinkActive="router-active">Dashboard</a>
         </li>
 
 
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="userBoard">
             <a class="nav-link active" routerLink="/applicationform" routerLinkActive="router-active">Apply Loan</a>
           </li>
 
@@ -48,9 +48,9 @@
               <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
+          </li> -->
         </ul>
       
 

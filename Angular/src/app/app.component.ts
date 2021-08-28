@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { SwPush } from '@angular/service-worker';
 import { TokenStorageService } from './SignUpLogin/_services/token-storage.service';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -13,6 +14,8 @@ export class AppComponent {
   isLoggedIn = false;
   showAdminBoard = false;
   showModeratorBoard = false;
+  userBoard= true;
+
   username?: string;
   private readonly publicKey='BI3dClbcrugOLd9kDw3P33ZoUCfJsPvUPumjmhenvbDknu6wX4W_an0YoNT5aOWiVf4ASHaWsk6fwfkNlHGnnO0';
 
@@ -38,6 +41,8 @@ export class AppComponent {
 
       this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
       this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
+      this.userBoard = this.roles.includes('ROLE_USER');
+
 
       this.username = user.username;
     }

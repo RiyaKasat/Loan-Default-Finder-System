@@ -270,7 +270,7 @@ goformi(){
   }
 
   goToPreviousPage() {
-    this.router.navigate(['repository/Admin']);
+    this.router.navigate(['home1']);
   }
 
   

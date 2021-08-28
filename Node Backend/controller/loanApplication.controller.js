@@ -58,6 +58,7 @@ exports.createLoanApplication = (req, res) => {
 
 
         loanRepaymentAccountNo: req.body.loanRepaymentAccountNo,
+        userResponse: req.body.userResponse
  
    };
   

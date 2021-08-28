@@ -3,6 +3,19 @@ import { LenderSettingsService } from '../services/Lendersettings.service';
 
 import { ROUTES } from './sidebar-routes.config';
 
+
+
+function abc()
+{
+const $button  = document.querySelector('#sidebar-toggle');
+const $wrapper = document.querySelector('#wrapper');
+
+$button.addEventListener('click', (e) => {
+  e.preventDefault();
+  $wrapper.classList.toggle('toggled');
+});
+}
+
 @Component({
   selector: 'lender-app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -22,6 +35,7 @@ export class LenderSidebarComponent implements OnInit, AfterViewInit, OnDestroy 
   }
 
   ngOnInit() {
+    abc();
     this.color = this.settingsService.getSidebarFilter();
     this.settingsService.sidebarFilterUpdate.subscribe((filter: string) => {
       this.color = filter;
