@@ -1,3 +1,6 @@
 undefined error: mysql connection failed: Access denied for user 'root'@'localhost' (using password: YES)
+<<<<<<< Updated upstream
 undefined error: mysql connection failed: Access denied for user 'root'@'localhost' (using password: YES)
 undefined error: mysql connection failed: Access denied for user 'root'@'localhost' (using password: YES)
+=======
+>>>>>>> Stashed changes
