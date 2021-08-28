@@ -1,10 +1,10 @@
 <div class="register-form col-md-6 ml-5 mr-5  " >
-  <h2>Admin Page For Adding Offers</h2>
+  <h2>Update Offer Details: </h2>
 
 
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="form-group ">
-     
+  
      
       <label>Offer Details</label>
       <input
@@ -12,7 +12,7 @@
         formControlName="offer_details"
         class="form-control"
         [ngClass]="{ 'is-invalid': submitted && f.offer_details.errors }"
-        value={{userFormDataArr.offer_details}}
+        [(ngModel)]="userFormDataArr.offer_details"
       />
       <div *ngIf="submitted && f.offer_details.errors" class="invalid-feedback">
         <div *ngIf="f.offer_details.errors.required">Offer Details is required</div>
@@ -26,6 +26,7 @@
         formControlName="tenure"
         class="form-control"
         [ngClass]="{ 'is-invalid': submitted && f.tenure.errors }"
+        [(ngModel)]="userFormDataArr.tenure"
       />
       <div *ngIf="submitted && f.tenure.errors" class="invalid-feedback">
         <div *ngIf="f.tenure.errors.required">Tenure is required</div>
@@ -40,6 +41,7 @@
         formControlName="interest_rate"
         class="form-control"
         [ngClass]="{ 'is-invalid': submitted && f.interest_rate.errors }"
+        [(ngModel)]="userFormDataArr.interest_rate"
       />
       <div *ngIf="submitted && f.interest_rate.errors" class="invalid-feedback">
         <div *ngIf="f.interest_rate.errors.required">Interest Rate is required</div>
@@ -55,6 +57,7 @@
         formControlName="email"
         class="form-control"
         [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+        [(ngModel)]="userFormDataArr.lender_email"
       />
       <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
         <div *ngIf="f.email.errors.required">Email is required</div>
@@ -71,6 +74,7 @@
         formControlName="lender_name"
         class="form-control"
         [ngClass]="{ 'is-invalid': submitted && f.lender_name.errors }"
+        [(ngModel)]="userFormDataArr.lender_name"
       />
       <div *ngIf="submitted && f.lender_name.errors" class="invalid-feedback">
         <div *ngIf="f.lender_name.errors.required">Lender Name is required</div>

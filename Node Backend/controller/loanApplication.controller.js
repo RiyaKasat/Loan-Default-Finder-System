@@ -80,8 +80,13 @@ exports.createLoanApplication = (req, res) => {
 //find user all loan Applications --done
 exports.findAllLoanApplications = (req, res) => {
   console.log(req.body);
+  console.log(req.query.id);
     loan_application.findAll({
-       userId: req.query.id
+      where:
+      {
+        userId: req.query.id
+      }
+      
       })
       .then(data => {
         res.send(data);

@@ -21,6 +21,7 @@ export class AdminUpdateOfferComponent implements OnInit {
   private routeSub: Subscription;
   userloanApplId: any;
   userFormDataArr;
+  public myvalue="ABC";
 
   constructor(private formBuilder: FormBuilder, private lenderService :LenderDashboardService,  private route: ActivatedRoute) {}
 

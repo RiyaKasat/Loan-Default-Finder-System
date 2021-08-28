@@ -16,6 +16,7 @@ export class RootComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    // window.location.reload();
     this.settingService.sidebarImageIndexUpdate.subscribe((id: number) => {
       this.id = id + 1;
     });

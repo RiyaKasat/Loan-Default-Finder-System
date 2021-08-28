@@ -83,6 +83,7 @@ export class SignUpLoginComponent implements OnInit {
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;
+       // window.location.reload();
         this.reloadPage();
       },
       err => {
@@ -95,8 +96,12 @@ export class SignUpLoginComponent implements OnInit {
   }
 
   reloadPage(): void {
-    this.router.navigate(['/dashboard'])
-    // window.location.reload();
+   // this.router.navigate([this.router.url]);
+    // 
    
+    this.router.navigate(['/dashboard']);
+    
+   
+     
   }
 }

@@ -13,7 +13,6 @@ export class UserProfileComponent implements OnInit {
   private routeSub: Subscription;
   formId: any;
   constructor(private lenderService: LenderDashboardService, private route: ActivatedRoute, private router: Router) { }
-
   userloanApplId: any;
   userData;
   Lender_offeringsId:any;
