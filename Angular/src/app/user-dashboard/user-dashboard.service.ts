@@ -12,6 +12,18 @@ export class UserDashboardService {
   getAllOffers(){
     return this.http.get(API_URL+'getAllOffers');
   }
+
+  getUserRegistrationData(id: number){
+   console.log("service class userid",id);
+      // return this.http.get(API_URL+'getLoginUserData',{
+      //   params:{
+      //   id: id
+      //   }
+      // });
+      return this.http.get(`${environment.apiUrl}getLoginUserData/${id}`
+      )
+  }
+
   
   getUserId()
   {

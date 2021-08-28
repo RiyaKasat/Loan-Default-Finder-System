@@ -1,7 +1,8 @@
 const { authJwt } = require("../middleware");
 const LendingOfferscontroller = require("../controller/lenders_offerings.controller");
 const LoanAppcontroller = require("../controller/loanApplication.controller");
-const usercontroller = require("../controller/user.controller")
+const usercontroller = require("../controller/user.controller");
+
 
 module.exports = function(app) {
   app.use(function(req, res, next) {
