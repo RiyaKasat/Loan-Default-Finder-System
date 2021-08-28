@@ -111,3 +111,6 @@ undefined info: Userid get request
 undefined info: mysql connection established
 undefined info: mysql connection established
 undefined info: mysql connection established
+undefined error: mysql connection failed: Access denied for user 'root'@'localhost' (using password: YES)
+undefined error: mysql connection failed: Access denied for user 'root'@'localhost' (using password: YES)
+undefined error: mysql connection failed: Access denied for user 'root'@'localhost' (using password: YES)

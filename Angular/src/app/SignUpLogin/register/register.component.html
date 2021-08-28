@@ -111,7 +111,38 @@
                     <a mat-mini-fab style="background-color: #3b5998;"><i class="fa fa-facebook"></i></a>
                   </div>
                   <!-- <h6 style="margin-bottom: 30px">or be classical</h6> -->
-                  <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+                  <form *ngIf="!isSuccessful" name="form"  [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+                    <div class="form-row">
+                      <i class="material-icons">username</i>
+                      <mat-form-field color="accent">
+                        <input type="text" matInput placeholder="Username" formControlName="username"/>
+                        <!-- <mat-error *ngFor="let validation of validation_messages.email">
+                         <mat-error class="error-message" *ngIf="registerForm.get('email').hasError(validation.type) && (registerForm.get('email').dirty || registerForm.get('email').touched)">{{validation.message}}</mat-error>
+                       </mat-error> -->
+                      </mat-form-field>
+                    </div>
+
+                    <div class="form-row">
+                      <i class="material-icons">email</i>
+                      <mat-form-field color="accent">
+                        <input type="text" matInput placeholder="Email address" formControlName="email"/>
+                        <mat-error *ngFor="let validation of validation_messages.email">
+                         <mat-error class="error-message" *ngIf="registerForm.get('email').hasError(validation.type) && (registerForm.get('email').dirty || registerForm.get('email').touched)">{{validation.message}}</mat-error>
+                       </mat-error>
+                      </mat-form-field>
+                    </div>
+                    <div class="form-row">
+                      <i class="material-icons">lock_outline</i>
+                      <mat-form-field color="accent">
+                        <input type="password" matInput placeholder="Password" formControlName="password"/>
+                        <mat-error *ngFor="let validation of validation_messages.password">
+                         <mat-error class="error-message" *ngIf="registerForm.get('password').hasError(validation.type) && (registerForm.get('password').dirty || registerForm.get('password').touched)">{{validation.message}}</mat-error>
+                       </mat-error>
+                      </mat-form-field>
+                    </div>
+
+<!-- 
                   <div class="row">
                     <i class="material-icons">face</i>
                     <mat-form-field color="accent">
@@ -172,8 +203,12 @@
                 
                   <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
                     Signup failed!<br />{{ errorMessage }}
-                  </div>
+                  </div> -->
                 </form>
+                <div >
+                  <button mat-button (click)="onSubmit()">LET'S GO</button>
+                </div>
+
                 </div>
                 </div>
                 <div class="alert alert-success" *ngIf="isSuccessful">
