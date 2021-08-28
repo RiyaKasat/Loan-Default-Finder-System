@@ -96,25 +96,37 @@
         <div class="row">
         <!-- <app-header></app-header> -->
       
-          <div class="row register-panel">
-            <div class="col-md-10 col-md-offset-1">
-            <div class="card">
+          <div class="row ">
+            <!-- register-panel -->
+            <!-- col-md-10 col-md-offset-1 -->
+            <div class="col-sm-6 col-xs-12 col-md-12 col-lg-12">
+           
+          
+         
+              <div class="card-header">
+                <i class="material-icons">perm_identity</i>
+                 </div>
+              
+          
+             <div class="card">
               <h2>Register</h2>
               <div class="row">
                 <div class="col-md-5 col-md-offset-1">
               </div>
+
+              <!-- col-md-5 -->
               <div class="col-md-5">
                 <div class="form-part">
                   <div class="socials">
-                    <a mat-mini-fab style="background-color: #55acee;"><i class="fa fa-twitter"></i></a>
-                    <a mat-mini-fab style="background-color: #ea4c89; margin: 0 5px;"><i class="fa fa-dribbble"></i></a>
-                    <a mat-mini-fab style="background-color: #3b5998;"><i class="fa fa-facebook"></i></a>
+                    <a mat-mini-fab style="background-color: #55acee;" href="https://mobile.twitter.com/i/flow/signup"><i class="fa fa-twitter"></i></a>
+                    <a mat-mini-fab style="background-color: #ea4c89; margin: 0 5px;" href="https://accounts.google.com/signup/v2/webcreateaccount?hl=en&flowName=GlifWebSignIn&flowEntry=SignUp"><i class="fa fa-google-plus"></i></a>
+                    <a mat-mini-fab style="background-color: #3b5998;" href="https://www.facebook.com/r.php"><i class="fa fa-facebook"></i></a>
                   </div>
                   <!-- <h6 style="margin-bottom: 30px">or be classical</h6> -->
                   <form *ngIf="!isSuccessful" name="form"  [formGroup]="registerForm" (ngSubmit)="onSubmit()">
 
                     <div class="form-row">
-                      <i class="material-icons">username</i>
+                      <i class="material-icons">person</i>
                       <mat-form-field color="accent">
                         <input type="text" matInput placeholder="Username" formControlName="username"/>
                         <!-- <mat-error *ngFor="let validation of validation_messages.email">
@@ -125,6 +137,7 @@
 
                     <div class="form-row">
                       <i class="material-icons">email</i>
+                      <br/>
                       <mat-form-field color="accent">
                         <input type="text" matInput placeholder="Email address" formControlName="email"/>
                         <mat-error *ngFor="let validation of validation_messages.email">
@@ -132,6 +145,9 @@
                        </mat-error>
                       </mat-form-field>
                     </div>
+
+                    <br>
+
                     <div class="form-row">
                       <i class="material-icons">lock_outline</i>
                       <mat-form-field color="accent">
@@ -141,6 +157,7 @@
                        </mat-error>
                       </mat-form-field>
                     </div>
+                    <br>
 
 <!-- 
                   <div class="row">
@@ -206,7 +223,10 @@
                   </div> -->
                 </form>
                 <div >
-                  <button mat-button (click)="onSubmit()">LET'S GO</button>
+
+                  <!-- <mat-form-field color="accent"> -->
+
+                  <button mat-form-field color="accent" mat-button (click)="onSubmit()">Register</button>
                 </div>
 
                 </div>
