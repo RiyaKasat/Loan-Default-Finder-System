@@ -4,17 +4,15 @@
 
   <div class="profile-info col-md-12">
       <div class="panel">
-          <form>
-              <textarea placeholder="Whats in your mind today?" rows="2" class="form-control input-lg p-text-area"></textarea>
-          </form>
+         
   
       </div>
       <div class="panel">
           <div class="bio-graph-heading">
-              Aliquam ac magna metus. Nam sed arcu non tellus fringilla fringilla ut vel ispum. Aliquam ac magna metus.
+              User's Loan Application Details
           </div>
           <div class="panel-body bio-graph-info">
-              <h1>User Detail's</h1>
+              <!-- <h1>User Detail's</h1> -->
               <div class="row"  *ngIf="userData" >
                   <div class="bio-row">
                       <!-- <input value="UserData[""]"> -->
@@ -77,17 +75,14 @@
                 <div class="bio-row">
                     <p><span>Years in Current Sales</span>: {{userData.yearsInCurrentSales}}</p>
                 </div>
-               
-                <div class="example-button-row">
-                    <button mat-raised-button color="primary">Accept</button>
-                    <button mat-raised-button color="primary">Reject</button>
-                    <!-- <button mat-raised-button color="primary">Primary</button> -->
-              </div>
           </div>
       </div>
 
-      <div class="bio-graph-heading">
-          
+      <div *ngIf="divboolean_accept || divboolean_modify">
+      <div class="bio-graph-heading" >
+         Applied Offer Details
+        
+        </div>
         <div class="bio-row">
             <p><span>Offer Details: </span>: {{userData.offer_details}}</p>
         </div>
@@ -110,13 +105,12 @@
             <p><span>Lender Name: </span>: {{userData.lender_name}}</p>
         </div> 
         <div class="example-button-row">
-            <button mat-raised-button color="primary">Accept</button>
-            <button mat-raised-button color="primary">Reject</button>
+            <button mat-raised-button color="primary" (click)="acceptOffer()" [disabled]="rejectOfferFlag">Accept</button>
+            <button mat-raised-button color="primary" (click)="rejectOffer()" [disabled]="acceptOfferFlag">Reject</button>
             <!-- <button mat-raised-button color="primary">Primary</button> -->
         </div>
     </div>
-    
-     
+   
   </div>
 </div>
 </div>

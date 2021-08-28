@@ -80,7 +80,7 @@ export class TableComponent implements OnInit {
   }
 
   goLoanDetails(id){
-    this.router.navigate(['userprofile', id], { queryParams: { id: id} });
+    this.router.navigate(['loandetails', id], { queryParams: { id: id} });
   }
 
 

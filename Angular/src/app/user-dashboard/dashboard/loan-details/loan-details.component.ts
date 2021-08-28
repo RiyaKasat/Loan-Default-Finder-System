@@ -10,6 +10,14 @@ import { LenderDashboardService } from 'src/app/SignUpLogin/lender-board/lender-
 })
 export class LoanDetailsComponent implements OnInit {
 
+  acceptOfferFlag:boolean=false;
+  rejectOfferFlag:boolean=false;
+  // buttonFlag:boolean=false;
+
+  divboolean_accept:boolean=false;
+  divboolean_modify:boolean=false;
+
+  loan_status:any;
   private routeSub: Subscription;
   formId: any;
   constructor(private lenderService: LenderDashboardService, private route: ActivatedRoute, private router: Router) { }
@@ -23,8 +31,16 @@ export class LoanDetailsComponent implements OnInit {
       this.userloanApplId = params['id'];
     });
     this.getProfileDetails(this.userloanApplId);
+    this.divShow();
   }
 
+  divShow()
+{
+  if(this.userData.loan_status=="Ongoing" || this.userData.loan_status=="Modified" || this.userData.form_modified=="Yes"){
+    this.divboolean_accept=true;
+  this.divboolean_modify=true;
+  }
+}  
   
  getProfileDetails(id) {
   this.lenderService.getLoanApplicationById(id).subscribe((res) =>
@@ -43,5 +59,17 @@ export class LoanDetailsComponent implements OnInit {
 
  }
 
+ acceptOffer()
+{
+  this.acceptOfferFlag = true;
+  this.loan_status="Approved";
+  console.log("loan status",this.loan_status)
+}
+
+rejectOffer(){
+  this.rejectOfferFlag= true;
+  this.loan_status="Rejected";
+  console.log(this.loan_status);
+}
 
 }
