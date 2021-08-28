@@ -30,6 +30,7 @@ module.exports = function(app) {
 
 
    app.get("/api/getLoginUserData/:id", usercontroller.getRegisteredUserLoginData);
+   app.put('/api/loanAppOffer/update/:id', LoanAppcontroller.updateloanApplicationOfferByMod);
 
   //  app.get("/api/getUserId",  LoanAppcontroller.findUserId);
 

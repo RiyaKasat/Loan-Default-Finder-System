@@ -8,6 +8,7 @@ import {
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { LenderDashboardService } from 'src/app/SignUpLogin/lender-board/lender-dashboard.service';
+import { FormService } from '../forms.service';
 import Validation from './utils/validation';
 
 @Component({
@@ -23,8 +24,10 @@ export class AdminUpdateOfferComponent implements OnInit {
   userFormDataArr;
   public myvalue="ABC";
 
-  constructor(private formBuilder: FormBuilder, private lenderService :LenderDashboardService,  private route: ActivatedRoute) {}
+  constructor(private formBuilder: FormBuilder, private lenderService :LenderDashboardService,  private route: ActivatedRoute,
+    private formservice :FormService) {}
 
+    
   ngOnInit(): void {
 
     this.routeSub = this.route.params.subscribe(params => {
@@ -46,7 +49,7 @@ export class AdminUpdateOfferComponent implements OnInit {
             Validators.maxLength(20)
           ]
         ],
-        email: ['', [Validators.required, Validators.email]],
+        lender_email: ['', [Validators.required, Validators.email]],
 
         interest_rate: [
           '',
@@ -56,12 +59,13 @@ export class AdminUpdateOfferComponent implements OnInit {
             Validators.maxLength(40)
           ]
         ],
-        confirmPassword: ['', Validators.required],
-        acceptTerms: [false, Validators.requiredTrue]
-      },
-      {
-        validators: [Validation.match('password', 'confirmPassword')]
+        loanStatus: ['Modified', Validators.required],
+        acceptTerms: [false, Validators.requiredTrue],
+        form_modified:['Yes', Validators.required]
       }
+      // {
+      //   validators: [Validation.match('password', 'confirmPassword')]
+      // }
     );
   }
 
@@ -79,11 +83,28 @@ export class AdminUpdateOfferComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.submitted = true;
+    
+    // const formdatainstance = new FormData();
+    // formdatainstance.append("offer_details", this.form.get('offer_details').value);
+    // formdatainstance.append("tenure", this.form.get('tenure').value);
+    // formdatainstance.append("interest_rate", this.form.get('interest_rate').value)
+    // formdatainstance.append("lender_email", this.form.get('email').value);
+    // formdatainstance.append("lender_name", this.form.get('lender_name').value);
+    // formdatainstance.set("form_modified", this.form.get('form_modified').value);
+    // formdatainstance.set("loanStatus", this.form.get('loanStatus').value);
+    
+    
 
-    if (this.form.invalid) {
-      return;
+   
+
+    this.formservice.ModifyLoanApp(this.userFormDataArr.id,  this.form.value).subscribe((res) =>
+    {
+        console.log("Update form res", res);
     }
+    )
+    
+
+   
 
     console.log(JSON.stringify(this.form.value, null, 2));
   }

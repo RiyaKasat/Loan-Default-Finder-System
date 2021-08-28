@@ -160,6 +160,56 @@ exports.findAllLoanApplications = (req, res) => {
 
 
 
+ exports.updateloanApplicationOfferByMod = async (req, res) => {
+  try{
+      let id = req.params.id;
+      let app = await loan_application.findByPk(id);
+  console.log(id);
+      if(!app){
+          // return a response to client
+          res.status(404).json({
+              message: "Not Found for updating a loan application with id = " + id,
+              app: "",
+              error: "404"
+          });
+      } else {    
+          // update new change to database
+          const updatedObject = {
+            offer_details: req.body.offer_details,
+            tenure: req.body.tenure,
+            interest_rate:req.body.interest_rate,
+           
+            lender_email : req.body.lender_email,    //lender's email.
+            lender_name: req.body.lender_name,
+            form_modified: req.body.form_modified,
+            loanStatus:req.body.loanStatus
+          }
+
+          console.log("Object");
+          console.log(updatedObject)
+          let result = await loan_application.update(updatedObject, {returning: true, where: {id: id}});
+          
+          // return the response to client
+          if(!result) {
+              res.status(500).json({
+                  message: "Error -> Can not update a loan application with id = " + req.params.id,
+                  error: "Can NOT Updated",
+              });
+          }
+
+          res.status(200).json({
+              message: "Update successfully a loan application with id = " + id,
+              app: updatedObject,
+          });
+      }
+  } catch(error){
+      res.status(500).json({
+          message: "Error -> Can not update a loan application with id = " + req.params.id,
+          error: error.message
+      });
+  }
+};
+
    
 
 
