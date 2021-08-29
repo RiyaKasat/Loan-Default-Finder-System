@@ -2,7 +2,20 @@ import {AfterViewInit, Component, OnInit, OnDestroy} from '@angular/core';
 import { AdminSettingsService } from '../admin-services/settings.service';
 
 
-import { ROUTES } from './sidebar-routes.config';
+
+import { ROUTES } from './adminsidebar-routes.config';
+
+
+function abc()
+{
+const $button  = document.querySelector('#sidebar-toggle');
+const $wrapper = document.querySelector('#wrapper');
+
+$button.addEventListener('click', (e) => {
+  e.preventDefault();
+  $wrapper.classList.toggle('toggled');
+});
+}
 
 @Component({
   selector: 'admin-app-sidebar',
@@ -23,6 +36,7 @@ export class AdminSidebarComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnInit() {
+    abc();
     this.color = this.settingsService.getSidebarFilter();
     this.settingsService.sidebarFilterUpdate.subscribe((filter: string) => {
       this.color = filter;

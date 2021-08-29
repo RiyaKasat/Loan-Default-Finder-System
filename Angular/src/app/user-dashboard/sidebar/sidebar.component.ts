@@ -2,6 +2,18 @@ import {AfterViewInit, Component, OnInit, OnDestroy} from '@angular/core';
 import { SettingsService } from '../services/settings.service';
 import { ROUTES } from './sidebar-routes.config';
 
+
+function abc()
+{
+const $button  = document.querySelector('#sidebar-toggle');
+const $wrapper = document.querySelector('#wrapper');
+
+$button.addEventListener('click', (e) => {
+  e.preventDefault();
+  $wrapper.classList.toggle('toggled');
+});
+}
+
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -29,6 +41,7 @@ export class SidebarComponent implements OnInit, AfterViewInit, OnDestroy {
     console.log(item);
   }
   ngOnInit() {
+    abc();
     this.color = this.settingsService.getSidebarFilter();
     this.settingsService.sidebarFilterUpdate.subscribe((filter: string) => {
       this.color = filter;
