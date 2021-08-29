@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { FileUploadService } from './file-upload.service';
 import { HttpClient, HttpEventType, HttpResponse } from '@angular/common/http';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { columnSelectionComplete } from '@syncfusion/ej2-grids';
 
  
@@ -21,6 +21,11 @@ export class FileUploadComponent implements OnInit {
 
     selectedFiles?: FileList;
     currentFile?: File;
+    financialProof?: File;
+    addressproof?: File;
+    businessownershipproof?: File;
+    identityproof?: File;
+
     progress = 0;
     message = '';
   
@@ -29,16 +34,26 @@ export class FileUploadComponent implements OnInit {
     constructor(private uploadService:FileUploadService, public fb: FormBuilder,
       private http: HttpClient
     ) {
-      this.formU = this.fb.group({
-        name: [''],
-        currentFile: [null]
-      })
+      
     }
     ngOnInit(): void {
+      this.createForm();
       this.fileInfos = this.uploadService.getFiles();
     }
 
  
+
+
+    
+  validation_messages = {
+    'repaymentAccNo': [
+      { type: 'required', message: 'Loan Repayment Account No. is required' },
+      { type: 'pattern', message: 'Loan Repayment Account No. must be a number' }
+    ],
+    'security':[
+      { type: 'required', message: 'Security is required' },
+    ]
+  };
 
 
   selectFile(event: any): void {
@@ -46,7 +61,21 @@ export class FileUploadComponent implements OnInit {
   }
   
 
- 
+  createForm()
+  { 
+  this.formU = this.fb.group({
+    repaymentAccNo: ['', [Validators.required, Validators.pattern("^[0-9]*$")] ],
+    security:['', Validators.required],
+     
+    financialProof: [null],
+    identityproof:[null],
+    businessownershipproof:[null],
+    addressproof:[null]
+
+
+    })
+  }
+
 
   // upload(): void {
   //   this.progress = 0;
@@ -87,16 +116,52 @@ export class FileUploadComponent implements OnInit {
   uploadFile(event) {
     const file = (event.target as HTMLInputElement).files[0];
     this.formU.patchValue({
-      currentFile: file
+      identityproof: file
     });
-    this.formU.get('currentFile').updateValueAndValidity()
+    this.formU.get('identityproof').updateValueAndValidity()
   }
+
+
+  uploadFile1(event) {
+    const file = (event.target as HTMLInputElement).files[0];
+    this.formU.patchValue({
+      businessownershipproof: file
+    });
+    this.formU.get('businessownershipproof').updateValueAndValidity()
+  }
+
+
+  uploadFile2(event) {
+    const file = (event.target as HTMLInputElement).files[0];
+    this.formU.patchValue({
+      addressproof: file
+    });
+    this.formU.get('addressproof').updateValueAndValidity()
+  }
+
+  uploadFile3(event) {
+    const file = (event.target as HTMLInputElement).files[0];
+    this.formU.patchValue({
+      financialProof: file
+    });
+    this.formU.get('financialProof').updateValueAndValidity()
+  }
+
+
+
+
+
+
+
+
+
 
   submitForm() {
     console.log("FormU",this.formU.value);
     var formData: any = new FormData();
     formData.append("name", this.formU.get('name').value);
     formData.append("CurrentFile", this.formU.get('currentFile').value);
+
 
      console.log("Mydata:",JSON.stringify(formData));
     this.http.post('http://localhost:3001/upload', this.formU.value).subscribe(

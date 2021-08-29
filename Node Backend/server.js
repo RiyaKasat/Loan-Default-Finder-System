@@ -57,19 +57,22 @@ const allowedOrigins = [
   ];
 
   
-const whitelist = ['http://localhost:4200', 'http://localhost:3001', 'http://127.0.0.1:4200']
-const corsOptions = {
-  origin: (origin, callback) => {
-    if (whitelist.indexOf(origin) !== -1) {
-      callback(null, true)
-    } else {
-      callback(new Error())
-    }
-  }
-}
-// var corsOptions = {
-//   origin: "http://localhost:4200"
+// const whitelist = ['http://localhost:4200', 'http://localhost:3001', 'http://127.0.0.1:4200']
+// const corsOptions = {
+//   origin: (origin, callback) => {
+//     if (whitelist.indexOf(origin) !== -1) {
+//       callback(null, true)
+//     } else {
+//       callback(new Error())
+//     }
+//   }
+// }
 
+
+var corsOptions = {
+  origin: "http://localhost:4200"
+
+}
 // };
 
 
