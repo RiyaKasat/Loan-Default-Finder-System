@@ -23,7 +23,7 @@ import { UserDashboardService } from '../../user-dashboard.service';
 export class TableComponent implements OnInit {
   
   
-  displayedColumns: string[] = [ 'id', 'lendername', 'lender_email', 'lenderOfferingId', 'createdDate', 'loanStatus', 'action'];
+  displayedColumns: string[] = [ 'id', 'lendername', 'lender_email', 'lenderOfferingId', 'createdDate', 'loanStatus'];
   dataSource: MatTableDataSource<LoanApplications>;
 
   noRecordsFlag:boolean=false;
