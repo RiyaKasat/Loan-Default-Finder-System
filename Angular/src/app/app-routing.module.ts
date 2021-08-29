@@ -46,6 +46,7 @@ import { AdminSettingsComponent } from './SignUpLogin/board-admin/Components/adm
 import { AdminTableComponent } from './SignUpLogin/board-admin/Components/admin-dashboard/table/table.component';
 import { AdminUpdateOfferComponent } from './Forms/admin-update-offer/admin-update-offer.component';
 import { LoanDetailsComponent } from './user-dashboard/dashboard/loan-details/loan-details.component';
+import { FileUploadComponent } from './file-upload/file-upload.component';
 
 
 
@@ -106,6 +107,9 @@ const Approutes: Routes = [
   },
   {
     path:'loandetails/:id',component:LoanDetailsComponent
+  },
+  {
+    path:'fileupload',component:FileUploadComponent
   },
 
 

@@ -57,10 +57,20 @@ const allowedOrigins = [
   ];
 
   
-var corsOptions = {
-  origin: "http://localhost:4200"
+const whitelist = ['http://localhost:4200', 'http://localhost:3001', 'http://127.0.0.1:4200']
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error())
+    }
+  }
+}
+// var corsOptions = {
+//   origin: "http://localhost:4200"
 
-};
+// };
 
 
 // Reflect the origin if it's in the allowed list or not defined (cURL, Postman, etc.)
@@ -94,12 +104,12 @@ module.exports = router;
 //SignUpLogin
 const Role = db.role;
 
-// db.sequelize.sync({force: true}).then(() => {
-//   console.log('Drop and Resync Db');
-//   initial();
-// });
+db.sequelize.sync({force: true}).then(() => {
+  console.log('Drop and Resync Db');
+  initial();
+});
 
- db.sequelize.sync();
+//  db.sequelize.sync();
 function initial() {
   Role.create({
     id: 1,

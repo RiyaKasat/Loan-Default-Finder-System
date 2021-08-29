@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { LenderDashboardService } from 'src/app/SignUpLogin/lender-board/lender-dashboard.service';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 @Component({
   selector: 'app-loan-details',
@@ -15,7 +16,7 @@ export class LoanDetailsComponent implements OnInit {
   // buttonFlag:boolean=false;
 
   divboolean_accept:boolean=false;
-  divboolean_modify:boolean=false;
+  divboolean_modify:boolean=true;
 
   loan_status:any;
   private routeSub: Subscription;
@@ -34,13 +35,7 @@ export class LoanDetailsComponent implements OnInit {
     this.divShow();
   }
 
-  divShow()
-{
-  if(this.userData.loan_status=="Ongoing" || this.userData.loan_status=="Modified" || this.userData.form_modified=="Yes"){
-    this.divboolean_accept=true;
-  this.divboolean_modify=true;
-  }
-}  
+x 
   
  getProfileDetails(id) {
   this.lenderService.getLoanApplicationById(id).subscribe((res) =>
@@ -58,18 +53,39 @@ export class LoanDetailsComponent implements OnInit {
   console.log(this.userData);
 
  }
+ divShow()
+ {
+   console.log("div show data:",this.userData.loan_status);
+   if(this.userData.loan_status=="Ongoing" || this.userData.loan_status=="Modified" || this.userData.form_modified=="Yes"){
+     this.divboolean_accept=true;
+   this.divboolean_modify=true;
+   }
+ } 
 
  acceptOffer()
 {
   this.acceptOfferFlag = true;
   this.loan_status="Approved";
   console.log("loan status",this.loan_status)
+  Swal.fire({  
+    position: 'top-end',  
+    icon: 'success',  
+    title: 'Offer has been accepted',  
+    showConfirmButton: false,  
+    timer: 1500  
+  })  
 }
 
 rejectOffer(){
   this.rejectOfferFlag= true;
   this.loan_status="Rejected";
   console.log(this.loan_status);
+  Swal.fire({  
+    // icon: 'error',  
+    // title: 'Oops...',  
+    text: 'You have rejected the offer',  
+    // footer: '<a href>Why do I have this issue?</a>'  
+  })
 }
 
 }

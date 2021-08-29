@@ -10,6 +10,7 @@ import { Subscription } from 'rxjs';
 import { LenderDashboardService } from 'src/app/SignUpLogin/lender-board/lender-dashboard.service';
 import { FormService } from '../forms.service';
 import Validation from './utils/validation';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 @Component({
   selector: 'app-admin-update-offer',
@@ -95,13 +96,36 @@ export class AdminUpdateOfferComponent implements OnInit {
     
     
 
-   
+    Swal.fire({  
+      title: 'Are you sure want to Modify?',  
+      text: 'Action can not be reverted',  
+      icon: 'warning',  
+      showCancelButton: true,  
+      confirmButtonText: 'Yes, Modify it!',  
+      cancelButtonText: 'No, Cancel'  
+    }).then((result) => {  
+      if (result.value) {  
+        
+        Swal.fire(  
+          'Modified!',  
+          'Loan offer has been modified',  
+          'success'  
+        )  
+        this.formservice.ModifyLoanApp(this.userFormDataArr.id,  this.form.value).subscribe((res) =>
+        {
+            console.log("Update form res", res);
+        }
+        )
+      } else if (result.dismiss === Swal.DismissReason.cancel) {  
+        Swal.fire(  
+          'Cancelled',  
+          'Offer stands as it is',  
+          'error'  
+        )  
+      }  
+    })  
 
-    this.formservice.ModifyLoanApp(this.userFormDataArr.id,  this.form.value).subscribe((res) =>
-    {
-        console.log("Update form res", res);
-    }
-    )
+  
     
 
    

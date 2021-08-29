@@ -28,7 +28,7 @@ export class LenderTableComponent implements OnInit {
   displayedColumns: string[] = [ 'fullname', 'email', 'loanAmount', 'contact', 'loanStatus', 'salesLastYear', 'action'];
   dataSource: MatTableDataSource<LenderLoanApplications>;
 
-  
+  noRecordsFlag:boolean=false;
 
 
   userId;
@@ -39,6 +39,7 @@ export class LenderTableComponent implements OnInit {
   ngOnInit() {
     this.getUserId();
     this.getAllByMod();
+    this.noRecords();
   }
 
   public getUserId()
@@ -92,7 +93,12 @@ export class LenderTableComponent implements OnInit {
 
   
   
-
+  noRecords(){
+    if(this.dataSource==null){
+      this.noRecordsFlag=true;
+    }
+  }
+  
 
 
  
