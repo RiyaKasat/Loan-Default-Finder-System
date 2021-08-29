@@ -59,7 +59,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { FormModule } from './Forms/form.module';
 
 import { NgbProgressbarModule } from '@ng-bootstrap/ng-bootstrap';
-import { FileUploadComponent } from './file-upload/file-upload.component';
+
 import { FileUploadModule } from './file-upload/file-upload.module';
 import { SendEmailService } from './send-email.service';
 import { RadioButtonModule } from '@syncfusion/ej2-angular-buttons';
@@ -97,7 +97,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     HowItworksComponent,
     ClientFeedbackComponent,
     CalculatorLoanComponent,
-  
+   
 
     HomeComponent,
     InputComponent,

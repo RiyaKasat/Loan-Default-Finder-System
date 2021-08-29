@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { LenderDashboardService } from '../../../lender-dashboard.service';
+import Swal from 'sweetalert2/dist/sweetalert2.js'; 
+
 
 @Component({
   selector: 'app-user-profile',
@@ -48,11 +50,65 @@ export class UserProfileComponent implements OnInit {
 
    public ModifyOffer(id)
    {
-      
+    Swal.fire({  
+      title: 'Are you sure want to Modify?',  
+      text: 'You will not be able revert it',  
+      icon: 'warning',  
+      showCancelButton: true,  
+      confirmButtonText: 'Yes, Modify!',  
+      cancelButtonText: 'Do not Modify'  
+    }).then((result) => {  
+      if (result.value) {  
+
+        Swal.fire(  
+          'Modified!',  
+          'Application status changed to Modified.',  
+          'success'  
+        )  
+        
+      } else if (result.dismiss === Swal.DismissReason.cancel) {  
+        Swal.fire(  
+          'Cancelled',  
+          'No changes are made.',  
+          'error'  
+        )  
+      }  
+    })
     this.router.navigate(['updateoffer', id], { queryParams: { id: id} });
+    
    }
   
-  
+   rejectLoan(){
+    Swal.fire({  
+      title: 'Are you sure want to Reject?',  
+      text: 'You will not be able revert it',  
+      icon: 'warning',  
+      showCancelButton: true,  
+      confirmButtonText: 'Yes, Reject!',  
+      cancelButtonText: 'Do not Reject'  
+    }).then((result) => {  
+      if (result.value) {  
+
+        Swal.fire(  
+          'Rejected!',  
+          'Application status changed to Rejected.',  
+          'success'  
+        )  
+        
+      } else if (result.dismiss === Swal.DismissReason.cancel) {  
+        Swal.fire(  
+          'Cancelled',  
+          'No changes are made.',  
+          'error'  
+        )  
+      }  
+    })
+
+   }
+
+   goAhead(){
+     
+   }
 
   
 
