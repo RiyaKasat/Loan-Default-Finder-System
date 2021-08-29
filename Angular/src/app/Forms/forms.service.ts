@@ -20,6 +20,7 @@ export class FormService {
     
   }
  
-
-
+  sendMessage(data){
+    return this.http.put<LoanApplications>(API_URL + 'loanAppOffer/update/' ,  data);
+  }
 }
