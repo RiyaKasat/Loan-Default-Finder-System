@@ -27,6 +27,7 @@ import {NgxMatIntlTelInputModule} from 'ngx-mat-intl-tel-input';
 import { FormIComponent } from './form-i/form-i.component';
 import { AdminAddOfferComponent } from './admin-add-offer/admin-add-offer.component';
 import { AdminUpdateOfferComponent } from './admin-update-offer/admin-update-offer.component';
+import { FileUploadFinalComponent } from './file-upload-final/file-upload-final.component';
 
 
 
@@ -42,7 +43,8 @@ import { AdminUpdateOfferComponent } from './admin-update-offer/admin-update-off
     EnquiryFormComponent,
     FormIComponent,
     AdminAddOfferComponent,
-    AdminUpdateOfferComponent
+    AdminUpdateOfferComponent,
+    FileUploadFinalComponent
 
 
   ],

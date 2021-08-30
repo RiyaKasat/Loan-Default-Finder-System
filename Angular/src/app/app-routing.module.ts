@@ -47,6 +47,7 @@ import { AdminTableComponent } from './SignUpLogin/board-admin/Components/admin-
 import { AdminUpdateOfferComponent } from './Forms/admin-update-offer/admin-update-offer.component';
 import { LoanDetailsComponent } from './user-dashboard/dashboard/loan-details/loan-details.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
+import { FileUploadFinalComponent } from './Forms/file-upload-final/file-upload-final.component';
 
 
 
@@ -73,6 +74,10 @@ const Approutes: Routes = [
     component: CalculatorLoanComponent
   },
   
+  {
+    path:'fileupload',
+    component:FileUploadFinalComponent
+  },
 
   {path: 'd', component: LoginComponent},
   {path: 'lock', component: LockComponent},

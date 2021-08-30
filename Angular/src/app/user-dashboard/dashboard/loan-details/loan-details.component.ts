@@ -67,14 +67,17 @@ x
   this.acceptOfferFlag = true;
   this.loan_status="Approved";
   console.log("loan status",this.loan_status)
-  Swal.fire({  
-    position: 'top-end',  
-    icon: 'success',  
-    title: 'Offer has been accepted',  
-    showConfirmButton: false,  
-    timer: 1500  
-  })  
+  // Swal.fire({  
+  //   position: 'top-end',  
+  //   icon: 'success',  
+  //   title: 'Offer has been accepted',  
+  //   showConfirmButton: false,  
+  //   timer: 1500  
+  // })  
+  this.router.navigate(['fileupload'], { state: {id:  this.userloanApplId } });
+
 }
+
 
 rejectOffer(){
   this.rejectOfferFlag= true;
