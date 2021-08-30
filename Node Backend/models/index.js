@@ -33,6 +33,9 @@ db.lender_offerings = require("../models/lender_offerings.model.js")(sequelize, 
 db.loan_application = require("./loan_application.model.js")(sequelize, Sequelize);
 db.merchant_details= require("./merchant_details.model.js")(sequelize, Sequelize);
 
+db.files = require('../models/filesequelize.model.js')(sequelize, Sequelize);
+ 
+
 
 
 
@@ -65,6 +68,8 @@ db.loan_application.belongsTo(db.lender_offerings, {foreignKey: 'lenderOfferingI
 db.loan_application.hasOne(db.merchant_details);
 db.merchant_details.belongsTo(db.loan_application);
 
+db.loan_application.hasMany(db.files);
+db.files.belongsTo(db.loan_application);
 
 
 
